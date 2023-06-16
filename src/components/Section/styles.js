@@ -4,15 +4,17 @@ export const Container = styled.div`
     width: 100%;
 
     > header {
-        padding-left: 2rem;
         color: ${({ theme }) => theme.COLORS.BLUE_800};
     
         display: flex;
         align-items: center;
         gap: 1rem;
 
+        margin-left: 1rem;
+
         h2 {
             white-space: nowrap;
+            font-size: clamp(2.5rem, 5vw, 5rem);
         }
 
         #line {

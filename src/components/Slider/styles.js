@@ -12,6 +12,7 @@ export const CustomSwiper = styled(Swiper)`
     
     display: flex;
     align-items: center;
+    margin-bottom: 1.5rem;
 `;
 
 export const CustomSwiperSlide = styled(SwiperSlide)`
@@ -24,13 +25,13 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
     position: relative;
 
     background-color: ${({ theme }) => theme.COLORS.OFF_WHITE};
-    filter: drop-shadow(11px 7px 19px rgba(0, 0, 0, 0.18));
+    box-shadow: 5px 4px 9px 2px rgba(0, 0, 0, 0.25);
     border-radius: 1rem;
      
     height: 30rem;
     width: clamp(21rem, 80vw, 24rem);
 
-    h1, section {
+    h1{
         display: flex;
         align-items: center;
     }
@@ -39,23 +40,11 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
         font-size: 1.6rem;
     }
     
-    #favorite, section button {
+    #favorite {
         border: none;
         background: none;
     }
     
-    section {
-
-        gap: 2rem;
-        font-weight: bold;
-
-        margin-bottom: 1rem;
-
-        > button {
-            font-size: 2rem;
-            color: ${({ theme }) => theme.COLORS.BLUE_800};
-        }
-    }
 
     > h1 {
         margin: 1rem 0;

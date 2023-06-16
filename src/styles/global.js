@@ -57,5 +57,9 @@ export default createGlobalStyle`
 
     button:hover, a:hover {
         filter: brightness(0.98);
-    } 
+    }
+    
+    li {
+        list-style-type: none;
+    }
 `;

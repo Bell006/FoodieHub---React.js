@@ -48,7 +48,7 @@ export function Home() {
             <Content>
                 <Outdoor>
                     <div id='img'>
-                        <img src={macarons} alt="" />
+                        <img src={macarons} alt="Falling macarons" />
                     </div>
                     <aside>
                         <h1>Sabores Inigualáveis</h1>
@@ -56,9 +56,17 @@ export function Home() {
                     </aside>
                 </Outdoor>
 
-                {/* <Section title="Refeições">
+                <Section title="Refeições">
                     <Slider items={items}/>
-                </Section> */}
+                </Section> 
+                
+                <Section title="Pratos Principais">
+                    <Slider items={items}/>
+                </Section>
+
+                <Section title="Sobremesas">
+                    <Slider items={items}/>
+                </Section>  
 
             </Content>
 

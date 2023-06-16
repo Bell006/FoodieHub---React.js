@@ -1,7 +1,9 @@
 import { Container, CustomSwiper, CustomSwiperSlide } from "./styles";
+
 import { AiOutlineHeart, AiOutlineArrowRight } from "react-icons/ai";
 import { MdOutlineRemove, MdOutlineAdd } from "react-icons/md";
 import { Button } from "../Button";
+import { Amount } from "../Amount";
 
 import SwiperCore, { Pagination, Navigation } from "swiper";
 import "swiper/swiper.min.css";
@@ -43,13 +45,7 @@ export function Slider({ items }) {
                   <h2>{item.price}</h2>
 
                   <section>
-                    <button> 
-                      <MdOutlineRemove/> 
-                    </button>
-                    <p>01</p>
-                    <button> 
-                      <MdOutlineAdd/> 
-                    </button>
+                    <Amount/>
                   </section>
                   
                   <Button title="Incluir" />

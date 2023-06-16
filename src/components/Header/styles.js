@@ -9,7 +9,7 @@ export const Container = styled.header`
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 200;
 
     background-color: ${({ theme }) => theme.COLORS.OFF_WHITE};
     
@@ -20,6 +20,7 @@ export const Container = styled.header`
     color: ${({ theme }) => theme.COLORS.BLUE_800};
 
     filter: drop-shadow(0px 8px 10px rgba(0, 0, 0, 0.09));
+
     button {
         border: none;
         background: none;
@@ -36,6 +37,7 @@ export const Container = styled.header`
     img {
         width: clamp(12rem, 40vw, 30rem);
     }
+
 
 `;
 
