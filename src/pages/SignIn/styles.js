@@ -1,4 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import logoIcon from "../../assets/Logo.png";
+
+const slideFwdCenter = keyframes`
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+    100% {
+        -webkit-transform: translateZ(160px);
+        transform: translateZ(160px);
+    }
+`;
 
 export const Container = styled.div`
     width: 100%;
@@ -36,6 +48,19 @@ export const Container = styled.div`
     a {
         color: ${({ theme }) => theme.COLORS.LIGHT_BLUE};
     }
+
+    
+    > img { 
+        position: absolute;
+        top: 60rem;
+        left: 17rem;
+        width: 35rem;
+        animation: ${slideFwdCenter} 1s;
+    }
+
+    background: url(${logoIcon}) no-repeat 12rem 37rem;
+    
+
 `;
 
 export const Logo = styled.div`

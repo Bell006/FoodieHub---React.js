@@ -42,7 +42,7 @@ export function Details() {
 
                     <Order>
                         <Amount/>
-                        <Button icon={BiMoney} title="Pedir - R$25,00" />
+                        <Button icon={BiMoney} title="Pedir - R$25,00" AddToCard/>
                     </Order>
 
                 </section>

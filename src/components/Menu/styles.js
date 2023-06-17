@@ -6,7 +6,7 @@ export const Container = styled.div`
 
 export const MenuBar = styled.div`
     position: fixed;
-    top: 11.5rem;
+    top: 10.5rem;
     left: 0;
     width:85%;
     height: 100vh;

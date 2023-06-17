@@ -6,6 +6,8 @@ export const Container = styled.div`
     display: grid;
     grid-template-rows: 11rem auto 7.5rem;
     grid-template-areas: "header" "content" "footer";
+
+    overflow: hidden;
 `;
 
 export const Content = styled.div`

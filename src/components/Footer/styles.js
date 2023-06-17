@@ -11,9 +11,6 @@ export const Container = styled.footer`
     justify-content: center;
     justify-content: space-evenly;
 
-    position: fixed;
-    bottom: 0;
-
     img {
         width: 8rem;
     }

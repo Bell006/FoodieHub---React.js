@@ -7,7 +7,7 @@ export const Container = styled.div`
 `;
 
 export const CustomSwiper = styled(Swiper)`
-    width: clamp(33rem, 90vw, 60rem);
+    width: clamp(32rem, 100vw, 60rem);
     height:  36rem;
     
     display: flex;

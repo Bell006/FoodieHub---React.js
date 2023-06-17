@@ -6,7 +6,7 @@ export const Container = styled.div`
     align-items: center;
     padding-left: 1rem;
 
-    background-color: ${({ theme }) => theme.COLORS.BLUE_800};
+    background-color: ${({ theme }) => theme.COLORS.BLUE_900};
     color: ${({ theme }) => theme.COLORS.OFF_WHITE};
 
     border-radius: 1.5rem;
@@ -14,8 +14,10 @@ export const Container = styled.div`
     > input {
         height: 4.8rem;
 
-        background-color: ${({ theme }) => theme.COLORS.BLUE_800};
+        background-color: ${({ theme }) => theme.COLORS.BLUE_900};
         color: ${({ theme }) => theme.COLORS.OFF_WHITE};
+
+      
 
         border: none;
         border-radius: 1.5rem;
@@ -26,3 +28,5 @@ export const Container = styled.div`
         }
     }
 `;
+
+

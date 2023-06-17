@@ -16,8 +16,9 @@ export function SignIn() {
 
                 <section>
                     <Input icon={AiOutlineMail} type="text" placeholder="usuario@email.com" />
-                    <Input icon={AiOutlineLock} type="password" placeholder="senha"/>
-
+                    
+                    <Input icon={AiOutlineLock} type="password" placeholder="senha"/>  
+                    
                     <Button title="Entrar" />
                 </section>
 
