@@ -11,8 +11,6 @@ export const Container = styled.div`
 export const Content = styled.div`
     grid-area: content;
 
-    max-width: 74rem;
-
     display: flex;
     flex-direction: column;
     align-items: center;

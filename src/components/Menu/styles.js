@@ -36,7 +36,7 @@ export const MenuBar = styled.div`
     ul {
         margin-top: 2rem;
 
-        li:nth-child(2) {
+        li:last-child {
             color: ${({ theme }) => theme.COLORS.RED}; 
         }
     }

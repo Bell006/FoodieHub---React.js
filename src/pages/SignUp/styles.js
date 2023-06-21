@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import logoIcon from "../../assets/LogoBackground.png";
 
 export const Container = styled.div`
     width: 100%;
@@ -36,6 +37,8 @@ export const Container = styled.div`
     a {
         color: ${({ theme }) => theme.COLORS.LIGHT_BLUE};
     }
+
+    background: url(${logoIcon}) no-repeat 12rem 37rem;
 `;
 
 export const Logo = styled.div`

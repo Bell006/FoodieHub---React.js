@@ -16,6 +16,7 @@ export const CustomSwiper = styled(Swiper)`
 `;
 
 export const CustomSwiperSlide = styled(SwiperSlide)`
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +32,7 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
     height: 30rem;
     width: clamp(21rem, 80vw, 24rem);
 
-    h1{
+    h1, section {
         display: flex;
         align-items: center;
     }
@@ -40,7 +41,7 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
         font-size: 1.6rem;
     }
     
-    #favorite {
+    .slideButton {
         border: none;
         background: none;
     }
@@ -59,16 +60,21 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
         color: ${({ theme }) => theme.COLORS.LIGHT_BLUE};
     }
 
+    section {
+        width: 100%;
+        flex-direction: column;
+    }
 
-    #favorite {
+
+    .slideButton {
         position: relative;
 
         bottom: .4rem;
         left: 7.5rem;
 
         > svg {
-            width: 2.5rem;
-            height: 2.5rem;
+            width: 2rem;
+            height: 2rem;
 
             color: ${({ theme }) => theme.COLORS.RED};
         }

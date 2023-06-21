@@ -36,10 +36,12 @@ export default createGlobalStyle`
         -webkit-font-smothing: antialiased;
     }
 
-    body, input, button, textarea {
+    body, input, button, textarea, label, select {
         font-family: 'Roboto', sans-serif;
         font-size: 1.6rem;
         outline: none;
+
+        line-height: 2rem;
     }
 
     a {

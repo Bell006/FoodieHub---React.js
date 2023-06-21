@@ -1,7 +1,8 @@
 import { Container, CustomSwiper, CustomSwiperSlide } from "./styles";
 
 import { AiOutlineHeart, AiFillHeart ,AiOutlineArrowRight } from "react-icons/ai";
-import { MdOutlineRemove, MdOutlineAdd } from "react-icons/md";
+import { GoPencil } from 'react-icons/go';
+
 import { Button } from "../Button";
 import { Amount } from "../Amount";
 
@@ -11,7 +12,7 @@ import { useState } from "react";
 
 SwiperCore.use([Pagination, Navigation]);
 
-export function Slider({ items }) {
+export function Slider({ items, Admin }) {
 
   const [favHeartOpen, setFavHeartOpen] = useState(false);
 
@@ -20,7 +21,7 @@ export function Slider({ items }) {
   }
 
     return(
-      <Container>
+      <Container Admin={Admin}>
           <CustomSwiper
             spaceBetween={10}
             slidesPerView="auto"
@@ -40,22 +41,40 @@ export function Slider({ items }) {
           >
             {items.map((item, index) => (
                 <CustomSwiperSlide key={index}>
-                    <button id="favorite" onClick={handleFavHeart}>
+                  {
+                    Admin && 
+                    <button className="slideButton">
+                      <GoPencil/>
+                    </button>
+                  }
+                    
+                  {
+                    !Admin && 
+                    <button className="slideButton" onClick={handleFavHeart}>
                       {favHeartOpen ? <AiFillHeart/> : <AiOutlineHeart/>}
                     </button>
+                  }
 
-                    <img src={item.img} alt="Food image" />
-                    <h1>
-                      {item.title}
-                      <AiOutlineArrowRight/>
-                    </h1>
-                    <h2>{item.price}</h2>
+                  <img src={item.img} alt="Food image" />
+                  <h1>
+                    {item.title}
+                    <AiOutlineArrowRight/>
+                  </h1>
+                  <h2>{item.price}</h2>
 
+                  {
+                    !Admin && 
                     <section>
                       <Amount/>
+
+                      <Button title="Incluir" />
                     </section>
-                    
-                    <Button title="Incluir" />
+                  }
+
+                  {
+                    Admin &&
+                      <Button title="Editar" icon={GoPencil} RedIconButton/>
+                  }
                 </CustomSwiperSlide>
             ))}
           </CustomSwiper>

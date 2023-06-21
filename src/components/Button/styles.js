@@ -20,7 +20,7 @@ export const Container = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: ${({ theme, AddToCard }) => AddToCard ?  theme.COLORS.RED : theme.COLORS.ORANGE};
+    background-color: ${({ theme, RedIconButton }) => RedIconButton ?  theme.COLORS.RED : theme.COLORS.ORANGE};
 
     padding: 0 .5rem;
 `;

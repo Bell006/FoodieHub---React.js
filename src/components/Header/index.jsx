@@ -2,20 +2,24 @@ import { Container } from "../Header/styles";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FiShoppingBag } from "react-icons/fi";
 import logo from "../../assets/logo.svg";
+import logoAdmin from "../../assets/Logo_admin.svg";
 
 import { Menu } from '../Menu';
 
-export function Header() {
+export function Header({Admin}) {
     return(
-        <Container>
+        <Container Admin={Admin}>
 
-            <Menu/>
+            { Admin ? <Menu Admin/>  : <Menu/> }
 
-            <img src={logo} alt="Brand logo" />
+            { Admin ?  <img src={logoAdmin} alt="Brand logo" /> : <img src={logo} alt="Brand logo" /> }
 
-            <button>
-                <FiShoppingBag/>
-            </button>
+            {
+                !Admin &&
+                <button>
+                    <FiShoppingBag/>
+                </button> 
+            }
             
         </Container>
     );

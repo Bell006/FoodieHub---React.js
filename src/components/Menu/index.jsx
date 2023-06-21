@@ -1,5 +1,5 @@
 import { Container, MenuBar } from "./styles";
-import { MdClose, MdSearch, MdLogout } from 'react-icons/md';
+import { MdClose, MdSearch, MdLogout, MdAddCircle } from 'react-icons/md';
 import {GrConfigure} from 'react-icons/gr';
 import { RxCookie } from 'react-icons/rx';
 
@@ -10,7 +10,7 @@ import { Section } from '../Section'
 import { useState, useEffect } from "react";
 import ReactDOM from 'react-dom';
 
-export function Menu({...rest}) {
+export function Menu({ Admin, ...rest}) {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleButtonClick = () => {
@@ -18,7 +18,7 @@ export function Menu({...rest}) {
     };
     
     return(
-        <Container>
+        <Container Admin={Admin}>
             <button onClick={handleButtonClick}>
                 {isOpen ? <MdClose /> : <RxCookie />}
             </button>
@@ -44,6 +44,14 @@ export function Menu({...rest}) {
                                 <GrConfigure/>
                                 Configurações
                             </li>
+
+                            {
+                                Admin &&
+                                <li>
+                                <MdAddCircle/>
+                                Novo Item
+                                </li>
+                            }
 
                             <li>
                                 <MdLogout/>

@@ -1,10 +1,9 @@
 import { Container, Content, MealImg, Tags, Order } from './styles';
 import food from "../../assets/FoodTestHD.png";
 
-
-import logo from "../../assets/brand_mobile.svg";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { BiMoney } from "react-icons/bi";
+import { GoPencil } from 'react-icons/go';
 
 import { Amount } from '../../components/Amount';
 import { Button } from '../../components/Button';
@@ -15,7 +14,7 @@ import { Tag } from '../../components/Tag';
 
 const tags = ["alface", "cebola", "pão naan", "pepino", "rabanete", "mostarda e mel"];
 
-export function Details() {
+export function Details_Admin() {
 
     return (
         <Container>
@@ -41,8 +40,7 @@ export function Details() {
                     </Tags>
 
                     <Order>
-                        <Amount/>
-                        <Button icon={BiMoney} title="Pedir - R$25,00" RedIconButton/>
+                        <Button icon={GoPencil} title="Editar" RedIconButton/>
                     </Order>
 
                 </section>
