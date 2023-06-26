@@ -2,13 +2,15 @@ import styled from "styled-components";
 
 export const Container = styled.button`
     width: 100%;
-    height: 4.8rem;
+    height: 100%;
+    min-height: 2.5rem;
+    max-height: 4.5rem;
 
     color: ${({ theme }) => theme.COLORS.OFF_WHITE};
 
     border: none;
     border-radius: .5rem;
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
 
     .icon-container {
         display: flex;

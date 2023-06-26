@@ -1,11 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    height: 100%;
+    height: 100vh;
+    width: 100%;
 
     display: grid;
     grid-template-rows: 11rem auto 7.5rem;
     grid-template-areas: "header" "content" "footer";
+
+
+    @media(min-width: 650px) {
+        justify-items: center;
+
+    }
 `;
 
 export const Content = styled.div`
@@ -34,11 +41,48 @@ export const Content = styled.div`
             color: ${({ theme }) => theme.COLORS.BLUE_900};
         }
     }
+
+
+
+    @media(min-width: 650px) {
+        display: grid;
+        gap: 2rem;
+
+        max-width: 80rem;
+
+        grid-template-columns: 45% auto;
+        grid-template-rows: auto 80%;
+        grid-template-areas: 
+            "backButton ." 
+            "img description";
+        
+        text-align: left;
+            
+        >TextButton {
+            grid-area: backButton;
+        }
+        
+        >img {
+            grid-area: img;
+
+            margin-right: 2rem;
+        }
+        
+        > section {
+            grid-area: description;
+            
+            align-items: flex-start;
+
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    }
 `;
 
 export const MealImg = styled.img`
-    height: 25rem;
-    width: 25rem;
+    width: clamp(22rem, 40vw, 33rem);
 `;
 
 export const Tags = styled.div`
@@ -47,15 +91,29 @@ export const Tags = styled.div`
     justify-content: center;
 
     flex-wrap: wrap;
+
+    @media(min-width: 650px) {
+        justify-content: left;
+
+    }
 `;
 
 export const Order = styled.div`
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     gap: 2rem;
 
     width: 90%;
+    height: 4rem;
 
     margin-top: 2rem;
+
+
+
+    
+    @media(min-width: 650px) {
+        gap: 3rem;
+        padding-right: 3rem;
+    }
 `;

@@ -14,7 +14,7 @@ export const Container = styled.div`
 
         h2 {
             white-space: nowrap;
-            font-size: clamp(2.5rem, 5vw, 5rem);
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
         }
 
         #line {

@@ -1,6 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    button {
+        border: none;
+        background: none;
+
+        width: clamp(2rem, 5vw, 4rem);
+
+
+    }
 
 `;
 
@@ -18,6 +26,7 @@ export const MenuBar = styled.div`
 
     padding-top: 1.5rem;
 
+
     main, header {
         margin: 1.5rem;
     }
@@ -28,7 +37,6 @@ export const MenuBar = styled.div`
 
     p:nth-child(2) {
         color: ${({ theme }) => theme.COLORS.GREY};
-        margin-bottom: 1.5rem;
     }
 
 

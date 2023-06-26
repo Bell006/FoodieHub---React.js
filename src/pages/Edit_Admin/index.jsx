@@ -21,30 +21,35 @@ export function Edit_Admin() {
 
                 <Section title="Editar Item">
 
-                    <form>
-                        <FoodImg htmlFor='img' >
-                            <label>
-                                <AiOutlineUpload/>
-                                Selecione uma imagem para alterá-la
-                                <input
-                                    id='img'
-                                    type='file'
-                                />
-                            </label>
-                        </FoodImg>
+                <form>
+                        <div className="img-wrapper">
+                            <span>Imagem do item</span>
+                            <FoodImg htmlFor='img' >
+                                <label>
+                                    <AiOutlineUpload/>
+                                    Selecione uma imagem
+                                    <input
+                                        id='img'
+                                        type='file'
+                                    />
+                                </label>
+                            </FoodImg>
+                        </div>
 
-                        <div className="input-wrapper">
+                        <div className="input-name">
                             <label htmlFor="name" >Nome</label>
                             <Input type="text" placeholder="Salada Ceasar" id="name"/>
+                        </div>
 
+                        <div className="input-price">
                             <label htmlFor="price" >Preço</label>
-                            <Input type="number" placeholder="R$40,00" id="price"/>
+                            <Input type="number" placeholder="R$40,00" id="price" label/>
                         </div>
 
                         <SelectWrapper>
                             <label htmlFor="select">Categoria</label>
 
-                            <select id='select'>
+                            <select id="select">
                                 <option value="opcao1">Refeição</option>
                                 <option value="opcao2">Sobremesa</option>
                                 <option value="opcao3">Bebidas</option>
@@ -56,7 +61,7 @@ export function Edit_Admin() {
 
                             <IngredientsWrapper>
                                 <IngredientsEdit isNew placeholder="Adicionar"/>
-                                <IngredientsEdit value="Pão de batata"/>
+                                <IngredientsEdit value="Pão de batata"/> 
                             </IngredientsWrapper>
                         </Ingredients>
 
@@ -64,12 +69,11 @@ export function Edit_Admin() {
                             <label htmlFor="description" >Descrição</label>
                             <TextArea id='description' placeholder='Fale brevemente sobre o prato, seus ingredientes e composição'/>
                         </div>
-
+                        
                         <div className="button-wrapper">
                             <Button title="Excluir Item" RedIconButton />
                             <Button title="Salvar Alterações" />
                         </div>
-                        
                     </form>
                 
                 </Section>

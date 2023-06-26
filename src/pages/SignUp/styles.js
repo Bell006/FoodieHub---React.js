@@ -27,6 +27,7 @@ export const Container = styled.div`
 
     section {
         gap: 1.5rem;
+        height: 24rem;
     }
 
     aside {
@@ -39,6 +40,15 @@ export const Container = styled.div`
     }
 
     background: url(${logoIcon}) no-repeat 12rem 37rem;
+
+
+
+    @media (min-width: 650px) {
+        
+        > main, section, aside {
+            width: 40rem;
+        }
+    }   
 `;
 
 export const Logo = styled.div`

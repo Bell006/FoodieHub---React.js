@@ -3,6 +3,8 @@ import { Container, Logo } from './styles';
 import logo from "../../assets/brand_mobile.svg";
 import { AiOutlineMail, AiOutlineLock, AiOutlineUser, AiOutlineArrowLeft } from "react-icons/ai";
 
+import { Link } from 'react-router-dom';
+
 import { Input } from "../../components/Input";
 import { Button } from '../../components/Button';
 
@@ -23,10 +25,10 @@ export function SignUp() {
                 </section>
 
                 <aside>
-                    <a href="#" >
+                    <Link to="/" >
                         <AiOutlineArrowLeft/>
                         Voltar para tela de login
-                    </a>
+                    </Link>
                 </aside>
             </main>
         </Container>

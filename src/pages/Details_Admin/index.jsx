@@ -18,12 +18,12 @@ export function Details_Admin() {
 
     return (
         <Container>
-            <Header/>
+            <Header Admin/>
             <Content>
                 <TextButton title="voltar" icon={AiOutlineArrowLeft}/>
                 
+                 <MealImg src={food}/>
                 <section>
-                    <MealImg src={food}/>
 
                     <h1>Salada Ravanello</h1>
 

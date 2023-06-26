@@ -11,9 +11,10 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.OFF_WHITE};
 
     border-radius: 1.5rem;
-    
+
     > input {
         height: 4.8rem;
+        width: 100%;
 
         background-color: ${({ theme }) => theme.COLORS.BLUE_900};
         color: ${({ theme }) => theme.COLORS.OFF_WHITE};

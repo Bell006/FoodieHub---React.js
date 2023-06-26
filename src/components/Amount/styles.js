@@ -7,13 +7,13 @@ export const Container = styled.div`
 
     font-weight: bold;
 
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 
     > button {
-        font-size: 2rem;
+        font-size: clamp(.2rem, 90vw, 1.5rem);
         color: ${({ theme }) => theme.COLORS.BLUE_800};
 
-        padding: .3rem .3rem 0rem .3rem;
+        padding: .2rem .3rem 0rem .3rem;
     }
 
     button {

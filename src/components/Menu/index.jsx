@@ -1,6 +1,6 @@
 import { Container, MenuBar } from "./styles";
 import { MdClose, MdSearch, MdLogout, MdAddCircle } from 'react-icons/md';
-import {GrConfigure} from 'react-icons/gr';
+import { GrConfigure } from 'react-icons/gr';
 import { RxCookie } from 'react-icons/rx';
 
 import { Input } from '../Input';

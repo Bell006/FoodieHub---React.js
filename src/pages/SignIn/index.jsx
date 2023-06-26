@@ -3,6 +3,8 @@ import { Container, Logo } from './styles';
 import logo from "../../assets/brand_mobile.svg";
 import { AiOutlineMail, AiOutlineLock } from "react-icons/ai";
 
+import { Link } from 'react-router-dom';
+
 import { Input } from "../../components/Input";
 import { Button } from '../../components/Button';
 
@@ -24,7 +26,7 @@ export function SignIn() {
 
                 <aside>
                     <p>Não possui uma conta?</p>
-                    <a href="#">Criar conta</a>
+                    <Link to="/register">Criar conta</Link>
                 </aside>
             </main>
         </Container>

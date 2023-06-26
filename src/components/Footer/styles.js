@@ -8,8 +8,7 @@ export const Container = styled.footer`
 
     display: flex;
     align-items: center;
-    justify-content: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 
     img {
         width: 8rem;

@@ -12,41 +12,90 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { TextButton } from '../../components/TextButton';
 import { Tag } from '../../components/Tag';
+import { useState, useEffect, Fragment } from 'react';
 
 const tags = ["alface", "cebola", "pão naan", "pepino", "rabanete", "mostarda e mel"];
 
 export function Details() {
+    const [isMobile, setIsMoble] = useState(false);
+
+
+
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMoble(window.innerWidth <= 650)
+        }
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        }
+    }, []);
 
     return (
         <Container>
             <Header/>
             <Content>
                 <TextButton title="voltar" icon={AiOutlineArrowLeft}/>
-                
-                <section>
+                {
+                    isMobile ?
+                    <>
+                        <section>
+                            <MealImg src={food}/>
+
+                            <h1>Salada Ravanello</h1>
+
+                            <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.</p>
+                            
+                            <Tags>
+                                {                        
+                                    tags.map(tag => {
+                                        return(
+                                            <Tag title={tag} key={tag}/>
+                                        )
+                                    })
+                                }
+                            </Tags>
+
+                            <Order>
+                                <Amount/>
+                                <Button icon={BiMoney} title="Pedir - R$25,00" RedIconButton/>
+                            </Order>
+
+                        </section>
+                    </>
+                    :
+                    <>
                     <MealImg src={food}/>
 
-                    <h1>Salada Ravanello</h1>
+                    <section>
 
-                    <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.</p>
-                    
-                    <Tags>
-                        {                        
-                            tags.map(tag => {
-                                return(
-                                    <Tag title={tag} key={tag}/>
-                                )
-                            })
-                        }
-                    </Tags>
+                        <h1>Salada Ravanello</h1>
 
-                    <Order>
-                        <Amount/>
-                        <Button icon={BiMoney} title="Pedir - R$25,00" RedIconButton/>
-                    </Order>
+                        <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.</p>
+                        
+                        <Tags>
+                            {                        
+                                tags.map(tag => {
+                                    return(
+                                        <Tag title={tag} key={tag}/>
+                                    )
+                                })
+                            }
+                        </Tags>
 
-                </section>
+                        <Order>
+                            <Amount/>
+                            <Button icon={BiMoney} title="Pedir - R$25,00" RedIconButton/>
+                        </Order>
 
+                    </section>
+                </>
+                }
             </Content>
             
 
