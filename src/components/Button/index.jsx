@@ -1,8 +1,8 @@
 import { Container } from "../Button/styles";
 
-export function Button({title, placeholder, icon: Icon, RedIconButton, ...rest}) {
+export function Button({onClick, title, placeholder, icon: Icon, RedIconButton, ...rest}) {
     return(
-        <Container typeof="button" {...rest} placeholder={placeholder} RedIconButton={RedIconButton}>
+        <Container typeof="button" {...rest} placeholder={placeholder} RedIconButton={RedIconButton} onClick={onClick}>
             {Icon && (
                 <div className="icon-container">
                     <Icon size={15} />

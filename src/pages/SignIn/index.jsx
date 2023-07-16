@@ -7,8 +7,20 @@ import { Link } from 'react-router-dom';
 
 import { Input } from "../../components/Input";
 import { Button } from '../../components/Button';
+import { useState } from 'react';
+
+import { useAuth } from '../../hooks/auth';
 
 export function SignIn() {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const { signIn } = useAuth();
+
+    function handleSignIn(e) {
+        signIn({email, password})
+    }
+
     return (
         <Container>
             <main>
@@ -17,11 +29,20 @@ export function SignIn() {
                 </Logo>
 
                 <section>
-                    <Input icon={AiOutlineMail} type="text" placeholder="usuario@email.com" />
+                    <Input 
+                        icon={AiOutlineMail} 
+                        type="text" 
+                        placeholder="usuario@email.com" 
+                        onChange={e => setEmail(e.target.value)} 
+                    />
                     
-                    <Input icon={AiOutlineLock} type="password" placeholder="senha"/>  
+                    <Input 
+                        icon={AiOutlineLock} 
+                        type="password" 
+                        placeholder="senha" 
+                        onChange={e => setPassword(e.target.value)} />
                     
-                    <Button title="Entrar" />
+                    <Button title="Entrar" onClick={handleSignIn}/>
                 </section>
 
                 <aside>

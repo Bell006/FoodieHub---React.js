@@ -9,22 +9,27 @@ import logo from "../../assets/logo.svg";
 import logoAdmin from "../../assets/Logo_admin.svg";
 
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Menu } from '../Menu';
 import { Input } from "../Input";
 import { Button } from "../Button";
 
+import { useAuth } from "../../hooks/auth";
+
 export function Header({Admin}) {
     const [isMobile, setIsMobile] = useState(false);
 
+    const { signOut } = useAuth();
+
+    const navigate = useNavigate();
+
+    function handleSignOut() {
+      signOut();
+      navigate("/");
+    }
 
 
-
-
-
-
-
-      
     useEffect(() => {
       const handleResize = () => {
         setIsMobile(window.innerWidth <= 650);
@@ -66,7 +71,7 @@ export function Header({Admin}) {
                           <GrConfigure/>
                       </button>
 
-                      <button id="exit"> 
+                      <button id="exit" onClick={handleSignOut}> 
                           <BiExit/>
                       </button>
                     </div>

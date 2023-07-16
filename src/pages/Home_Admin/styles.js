@@ -4,6 +4,7 @@ export const Container = styled.div`
     height: 100%;
 
     display: grid;
+    justify-items: center;
     grid-template-rows: 11rem auto 7.5rem;
     grid-template-areas: "header" "content" "footer";
 
@@ -18,11 +19,9 @@ export const Content = styled.div`
     align-items: center;
     align-content: center;
 
-    margin: 0 auto;
+    margin: 0 1.5rem;
 
-    padding-top: 2rem;
-
-
+    max-width: 90rem;
 
     @media (min-width: 650px) {
          padding-top: 9rem;
@@ -117,6 +116,8 @@ width: clamp(29rem, 80vw, 60rem);
         
         grid-template-columns: 55% auto;
 
+        margin-bottom: 6rem;
+
         #img {
             top: -9.4rem;
             right: 3.5rem;
@@ -128,18 +129,20 @@ width: clamp(29rem, 80vw, 60rem);
         }
     
         aside {
-            top: 6rem;
+            top: 5rem;
         }
     
         h1 {
             font-size: 2.5rem;
             width: 26rem;
+
+            margin-bottom: .8rem;
         }
     
         p {
-            font-size: .9rem;
-            width: 28rem;
-            line-height: 2.5rem;
+            font-size: 1.4rem;
+            width: 25rem;
+            line-height: 1.8rem;
         }
     }
 `; 

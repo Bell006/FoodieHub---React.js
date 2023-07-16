@@ -25,7 +25,7 @@ export function Slider({ items, Admin }) {
     
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth >= 650);
+      setIsMobile(window.innerWidth >= 770);
     };
 
     handleResize(); // Verifica a resolução
@@ -67,40 +67,53 @@ export function Slider({ items, Admin }) {
 
         {items.map((item, index) => (
             <CustomSwiperSlide key={index}>
-              {
-                Admin && 
-                <button className="slideButton">
-                  <GoPencil/>
-                </button>
-              }
-                
-              {
-                !Admin && 
-                <button className="slideButton" onClick={handleFavHeart}>
-                  {favHeartOpen ? <AiFillHeart/> : <AiOutlineHeart/>}
-                </button>
-              }
 
-              <img src={item.img} alt="Food image" />
-              <h1>
-                {item.title}
-                <AiOutlineArrowRight/>
-              </h1>
-              <h2>{item.price}</h2>
+              {Admin ? 
+                <div className="admin">
+                  <div className="item">
+                    <button className="itemButton">
+                      <img src={item.img} alt="Food image" />
 
-              {
-                !Admin && 
-                <section>
+                      <div className="title">
+                      {item.title}
+                      <AiOutlineArrowRight/>
+                      </div>
+                    </button>
+
+                    <h2>{item.price}</h2>
+                  </div>
+
+                  <section>
+                    <Button title="Editar" RedIconButton icon={GoPencil}/>
+                  </section>
+                </div>
+              :
+                <div className="customer">
+                  <button className="favButton" onClick={handleFavHeart}>
+                    {favHeartOpen ? <AiFillHeart/> : <AiOutlineHeart/>}
+                  </button>
+
+                  <div className="item">
+                    <button className="itemButton">
+                      <img src={item.img} alt="Food image" />
+
+                      <div className="title">
+                      {item.title}
+                      <AiOutlineArrowRight/>
+                      </div>
+                    </button>
+
+                    <h2>{item.price}</h2>
+                  </div>
+
+                  <section>
                   <Amount/>
 
                   <Button title="Incluir" />
-                </section>
+                  </section>
+                </div>
               }
 
-              {
-                Admin &&
-                  <Button title="Editar" icon={GoPencil} RedIconButton/>
-              }
             </CustomSwiperSlide>
           ))
         }

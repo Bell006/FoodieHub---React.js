@@ -37,6 +37,7 @@ export const MenuBar = styled.div`
 
     p:nth-child(2) {
         color: ${({ theme }) => theme.COLORS.GREY};
+        margin-bottom: 1rem;
     }
 
 

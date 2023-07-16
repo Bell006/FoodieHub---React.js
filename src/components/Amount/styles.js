@@ -3,11 +3,15 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.2rem;
 
     font-weight: bold;
 
     margin-bottom: .5rem;
+
+    > p {
+        font-size: clamp(.2rem, 90vw, 1.3rem);
+    }
 
     > button {
         font-size: clamp(.2rem, 90vw, 1.5rem);

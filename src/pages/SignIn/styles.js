@@ -20,12 +20,12 @@ export const Container = styled.div`
     }
 
     > main {
-        gap: 3.5rem;
+        gap: 2rem;
     }
 
     section {
         gap: 1.5rem;
-        height: 17.5rem;
+        height: 20rem;
     }
 
     aside {
@@ -52,4 +52,5 @@ export const Container = styled.div`
 export const Logo = styled.div`
     
 `;
+
 

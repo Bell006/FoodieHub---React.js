@@ -33,7 +33,7 @@ export const CustomSwiper = styled(Swiper)`
     
     display: flex;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 4rem;
 
     @media (min-width: 650px) {
         width: clamp(70rem, 100vw, 80rem);
@@ -43,29 +43,57 @@ export const CustomSwiper = styled(Swiper)`
 
 export const CustomSwiperSlide = styled(SwiperSlide)`
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    margin: 2.5rem 1rem;
-
-    position: relative;
-
     background-color: ${({ theme }) => theme.COLORS.OFF_WHITE};
     box-shadow: 5px 4px 9px 2px rgba(0, 0, 0, 0.25);
     border-radius: 1rem;
-     
-    height: 20rem;
-    width: clamp(13rem, 80vw, 18rem);
+    
+    height: 28rem;
+    width: clamp(14rem, 80vw, 18rem);   
+    padding: 1rem;
+    margin: 2rem 1.2rem;
 
-    .slideButton {
-        position: relative;
+    .admin, .customer, .itemButton, .item, section {
+        display: flex;
+        align-items: center;
+    }
+    
+    .admin, .customer, .itemButton {
+        width: 100%;
+        height: 100%;
 
-        bottom: -.5rem;
-        left: 6rem;
+        flex-direction: column;
+        justify-content: center;
+    }
 
+    .favButton, .itemButton, p {
         border: none;
         background: none;
+    }
+
+    .customer {
+        position: relative;
+    }
+
+    .item {
+        height: 70%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    
+    .itemButton {
+        gap: 1rem;
+
+        svg {
+            margin-left: .5rem;
+        }
+    }
+
+    .favButton {
+        position: relative;
+
+        top: 1rem;
+        left: 5rem;
 
         > svg {
             width: 1.5rem;
@@ -75,42 +103,26 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
         }
     }
     
-    h1, section {
-        display: flex;
-        align-items: center;
-    }
 
-    h1, p {
-        font-size: .9rem;
-    }
-    
-    > h1 {
-        margin: .1rem 0;
-        gap: .5rem;
-    }
-
-    > h2 {
-        font-size: 1rem;
-        margin-bottom: .5rem;
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
 
         color: ${({ theme }) => theme.COLORS.LIGHT_BLUE};
     }
 
     section {
         width: 100%;
-        height: 100%;
+        height: 23%;
+        
+        gap: .5rem;
+
         flex-direction: column;
     }
 
     img {
-        width: 5.5rem;
-        height: 5.5rem;
+        width: clamp(8rem, 15vw, 11rem);
     }
-
-    button:nth-child(2) {
-        margin-top: .5rem;
-    }
-
 
     @media (min-width: 600px) {
         height: 32rem;
@@ -118,32 +130,19 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
 
         padding: 2.4rem;
 
-        h1, p {
-            font-size: 1.6rem;
-        }
-        
-
-        > h1 {
+        > #itemButton {
             margin: 1rem 0;
             gap: 1rem;
         }
 
-        > img {
-            width: 11rem;
-            height: 11rem;
-        }
-
-
-        > h2 {
-            font-size: 1.8rem;
+        h2 {
+            font-size: 2rem;
             margin-bottom: 1rem;
         }
 
-        .slideButton {
-            position: relative;
-
-            bottom: .4rem;
-            left: 7.5rem;
+        .favButton {
+            top: .5rem;
+            left: 7rem;
 
             > svg {
                 width: 2rem;
