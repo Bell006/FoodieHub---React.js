@@ -4,10 +4,11 @@ import { GrConfigure } from 'react-icons/gr';
 import { RxCookie } from 'react-icons/rx';
 
 import { Input } from '../Input';
-import { Section } from '../Section'
+import { Section } from '../Section';
+import { useAuth } from '../../hooks/auth';
 
-
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ReactDOM from 'react-dom';
 
 export function Menu({ Admin, ...rest}) {
@@ -16,6 +17,15 @@ export function Menu({ Admin, ...rest}) {
     const handleButtonClick = () => {
         setIsOpen(!isOpen);
     };
+
+    const { signOut } = useAuth();
+
+    const navigate = useNavigate();
+
+    function handleSignOut() {
+      signOut();
+      navigate("/");
+    }
     
     return(
         <Container Admin={Admin}>
@@ -37,8 +47,6 @@ export function Menu({ Admin, ...rest}) {
                     </header>
 
                     <main>
-                
-
                         <ul>
                             <li>
                                 <GrConfigure/>
@@ -47,13 +55,13 @@ export function Menu({ Admin, ...rest}) {
 
                             {
                                 Admin &&
-                                <li>
+                                <li onClick={() => navigate("/new")}>
                                 <MdAddCircle/>
                                 Novo Item
                                 </li>
                             }
 
-                            <li>
+                            <li onClick={handleSignOut}>
                                 <MdLogout/>
                                 Sair
                             </li>

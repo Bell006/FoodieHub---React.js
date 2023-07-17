@@ -16,7 +16,7 @@ export function SignUp() {
     const [password, setPassword] = useState("");
     const [isAdmin, setIsAdmin] = useState(false);
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     function handelSignUp() {
         api.post("users", {name, email, password, isAdmin})

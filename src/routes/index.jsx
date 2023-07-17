@@ -10,7 +10,7 @@ export function Routes() {
 
     return(
         <BrowserRouter>
-            {user ? (adminCheck === 1 ? <AdminRoutes /> : <UserRoutes />) : <AuthRoutes />}
+            {user ? (adminCheck == 1 ? <AdminRoutes /> : <UserRoutes />) : <AuthRoutes />}
         </BrowserRouter>
     );
 }

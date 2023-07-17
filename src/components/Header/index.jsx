@@ -29,6 +29,10 @@ export function Header({Admin}) {
       navigate("/");
     }
 
+    function handleHome() {
+      navigate("/")
+    }
+
 
     useEffect(() => {
       const handleResize = () => {
@@ -52,19 +56,19 @@ export function Header({Admin}) {
               isMobile ? (
                 <>
                     { Admin ? <Menu Admin/>  : <Menu/> }
-                    { Admin ?  <img src={logoAdmin} alt="Brand admin logo" /> : <img src={logo} alt="Brand logo" /> }
+                    { Admin ?  <img src={logoAdmin} alt="Brand admin logo" onClick={handleHome}/> : <img src={logo} alt="Brand logo" onClick={handleHome}/> }
                     { !Admin ?   <button> <FiShoppingBag/></button> : ""  }
                 </>
                 ) 
                 : 
                 <DesktopHeader>
-                    { Admin ?  <img src={logoAdmin} alt="Brand admin logo" /> : <img src={logo} alt="Brand logo" /> }
+                    { Admin ?  <img src={logoAdmin} alt="Brand admin logo" onClick={handleHome}/> : <img src={logo} alt="Brand logo" onClick={handleHome}/> }
 
                     <Input icon={MdSearch} placeholder="Busque por pratos ou ingredientes"/>
 
                     <Button title="Incluir" RedIconButton icon={MdAddCircle}/>
 
-                    { Admin ?  <Button title="Novo" RedIconButton icon={MdAddCircle}/> : <Button title="Pedidos" RedIconButton icon={MdOutlineShoppingBasket}/> }
+                    { Admin ?  <Button title="Novo" RedIconButton icon={MdAddCircle} onClick={() => navigate("/new")}/> : <Button title="Pedidos" RedIconButton icon={MdOutlineShoppingBasket}/> }
                     
                     <div className="sideButtons">
                       <button id="configs"> 
