@@ -69,9 +69,7 @@ export const Container = styled.div`
 
     .textArea-wrapper {
         @media(min-width: 650px) {
-        grid-area: description;
-
-            
+            grid-area: description;
         }
     }
 

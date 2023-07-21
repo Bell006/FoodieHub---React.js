@@ -25,8 +25,11 @@ export function Header({Admin}) {
     const navigate = useNavigate();
 
     function handleSignOut() {
-      signOut();
-      navigate("/");
+      const exit = confirm("Deseja sair?");
+      if(exit) {
+        signOut();
+        navigate("/");
+      }
     }
 
     function handleHome() {
@@ -50,38 +53,55 @@ export function Header({Admin}) {
 
 
     return(
-        <Container Admin={Admin}>
+      <Container Admin={Admin}>
 
-            {
-              isMobile ? (
-                <>
-                    { Admin ? <Menu Admin/>  : <Menu/> }
-                    { Admin ?  <img src={logoAdmin} alt="Brand admin logo" onClick={handleHome}/> : <img src={logo} alt="Brand logo" onClick={handleHome}/> }
-                    { !Admin ?   <button> <FiShoppingBag/></button> : ""  }
-                </>
-                ) 
-                : 
-                <DesktopHeader>
-                    { Admin ?  <img src={logoAdmin} alt="Brand admin logo" onClick={handleHome}/> : <img src={logo} alt="Brand logo" onClick={handleHome}/> }
-
-                    <Input icon={MdSearch} placeholder="Busque por pratos ou ingredientes"/>
-
-                    <Button title="Incluir" RedIconButton icon={MdAddCircle}/>
-
-                    { Admin ?  <Button title="Novo" RedIconButton icon={MdAddCircle} onClick={() => navigate("/new")}/> : <Button title="Pedidos" RedIconButton icon={MdOutlineShoppingBasket}/> }
-                    
-                    <div className="sideButtons">
-                      <button id="configs"> 
-                          <GrConfigure/>
-                      </button>
-
-                      <button id="exit" onClick={handleSignOut}> 
-                          <BiExit/>
-                      </button>
-                    </div>
-                </DesktopHeader>
+        { isMobile ? 
+          (<>
+            { Admin ? <Menu Admin/>  : <Menu/> }
+            { Admin ?  
+              <img src={logoAdmin} alt="Brand admin logo" onClick={handleHome}/> : 
+              <img src={logo} alt="Brand logo" onClick={handleHome}/> 
             }
+            { !Admin ?   <button> <FiShoppingBag/></button> : ""  }
+          </>) 
+          : 
+          <DesktopHeader>
+              { Admin ?  
+                <img src={logoAdmin} alt="Brand admin logo" onClick={handleHome}/> : 
+                <img src={logo} alt="Brand logo" onClick={handleHome}/> 
+              }
+
+              <Input icon={MdSearch} placeholder="Busque por pratos ou ingredientes"/>
+
+              <Button title="Incluir" RedIconButton icon={MdAddCircle}/>
+
+              { Admin ?  
+                <Button 
+                  title="Novo" 
+                  RedIconButton 
+                  icon={MdAddCircle} 
+                  onClick={() => navigate("/new")}
+                /> 
+                : 
+                <Button 
+                  title="Pedidos" 
+                  RedIconButton 
+                  icon={MdOutlineShoppingBasket}
+                /> 
+              }
+              
+              <div className="sideButtons">
+                <button id="configs"> 
+                    <GrConfigure/>
+                </button>
+
+                <button id="exit" onClick={handleSignOut}> 
+                    <BiExit/>
+                </button>
+              </div>
+          </DesktopHeader>
+        }
             
-        </Container>
+      </Container>
     );
 }

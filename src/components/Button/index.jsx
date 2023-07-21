@@ -1,5 +1,7 @@
 import { Container } from "../Button/styles";
 
+import { Loading } from "../Loading";
+
 export function Button({onClick, title, placeholder, icon: Icon, RedIconButton, loading = false, ...rest}) {
     return(
         <Container 
@@ -15,7 +17,7 @@ export function Button({onClick, title, placeholder, icon: Icon, RedIconButton, 
                     <Icon size={15} />
                 </div>
             )}
-            { loading ? "Carregando..." : title }
+            { loading ? <Loading/> : title }
         </Container>
     );
 }

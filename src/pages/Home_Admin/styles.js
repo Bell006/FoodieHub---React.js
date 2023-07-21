@@ -19,18 +19,45 @@ export const Content = styled.div`
     align-items: center;
     align-content: center;
 
-    margin: 0 1.5rem;
+    margin:  1.5rem;
 
     max-width: 90rem;
 
+    .noItems {
+        height: 100%;
+        width: 100%;
+
+        padding: 10rem 0;
+
+        img {
+            width: 100%;
+        }
+
+        h1 {
+            color: ${({ theme }) => theme.COLORS.GREY};  
+            font-size: clamp(1.4rem, 3vw, 3rem);
+            text-align: center;
+            line-height: 2.8rem;
+            margin: 0 auto;
+
+            max-width: 20rem;
+        }
+    }
+
     @media (min-width: 650px) {
          padding-top: 9rem;
+
+         .noItems {
+            h1 {
+                max-width: 60rem;
+            }
+    }
     }  
 `;
 
 export const Outdoor = styled.div`
 
-width: clamp(29rem, 80vw, 60rem);
+    width: clamp(29rem, 80vw, 60rem);
     height: 7.5rem;
     grid-area: content;
     display: grid;

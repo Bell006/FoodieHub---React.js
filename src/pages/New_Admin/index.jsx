@@ -31,7 +31,9 @@ export function New_Admin() {
 
     const navigate = useNavigate();
 
-    console.log([title, price, description, category, itemImg, ingredients]);
+    function handleBack() {
+        navigate(-1)
+    }
 
     function handleAddIngredient() {
         if(!newIngredient) {
@@ -40,7 +42,7 @@ export function New_Admin() {
             return alert("O ingrediente mencionado já foi listado.")
         }
         setIngredients(prevState => [...prevState, newIngredient]);
-        setNewIngredient("");
+        setNewIngredient('');
     }
 
     function handleDeleteIngredient(deletedIngredient) {
@@ -56,8 +58,8 @@ export function New_Admin() {
     async function handleAddItem() {
 
         try {
-            const response = await api.post("items", { title, description, price, ingredients, category })
-            const item_id = response.data;
+            const response = await api.post("/items", { title, description, price, ingredients, category });
+            const item_id = response.data.id;
 
             const fileUploadForm = new FormData();
             fileUploadForm.append("image", itemImg);
@@ -65,7 +67,16 @@ export function New_Admin() {
             const imgUpload = await api.patch(`items/img/${item_id}`, fileUploadForm);
             
             alert("Item cadastrado com sucesso!");
-            navigate(-1);
+            
+            navigate(`/items/details/${item_id}`, { state: 
+                {   title, 
+                    price, 
+                    category, 
+                    currentImg, 
+                    description, 
+                    ingredients
+                } 
+            });
         } catch(error) {
             if (error.response) {
                 alert(error.response.data.message);
@@ -81,7 +92,7 @@ export function New_Admin() {
             <Header Admin/>
 
             <main>
-                <TextButton title="voltar" icon={AiOutlineArrowLeft}/>
+                <TextButton title="voltar" icon={AiOutlineArrowLeft} onClick={handleBack}/>
 
                 <Section title="Novo Item">
 
@@ -126,10 +137,10 @@ export function New_Admin() {
                             <label htmlFor="select">Categoria</label>
 
                             <select id="select" onChange={e => setCategory(e.target.value)}>
-                                <option value="Refeição">Refeição</option>
-                                <option value="Sobremesa">Sobremesa</option>
-                                <option value="Bebida">Bebida</option>
-                                <option value="Acompanhamento">Acompanhamento</option>
+                                <option value="Refeições">Refeições</option>
+                                <option value="Sobremesas">Sobremesas</option>
+                                <option value="Bebidas">Bebidas</option>
+                                <option value="Acompanhamentos">Acompanhamentos</option>
                             </select>
                         </SelectWrapper>
 

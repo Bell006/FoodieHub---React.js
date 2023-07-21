@@ -11,17 +11,37 @@ import { Amount } from "../Amount";
 import SwiperCore, { Pagination, Navigation } from "swiper";
 import "swiper/swiper-bundle.min.css";
 
-SwiperCore.use([Pagination, Navigation]);
+import { api } from "../../services/api";
 
+import { useNavigate } from "react-router-dom";
+
+SwiperCore.use([Pagination, Navigation]);
 
 export function Slider({ items, Admin }) {
 
   const [favHeartOpen, setFavHeartOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+
+  const itemImgUrl = `${api.defaults.baseURL}/files`;
+
+  const navigate = useNavigate();
   
   function handleFavHeart() {
     setFavHeartOpen(!favHeartOpen);
   }
+
+  function handleEdit(item_id) {
+    return navigate(`/edit/${item_id}`);
+  }
+
+  function handleDetails(item_id) {
+    return navigate(`/details/${item_id}`);
+  }
+
+
+
+
+
     
   useEffect(() => {
     const handleResize = () => {
@@ -65,58 +85,58 @@ export function Slider({ items, Admin }) {
           isMobile ? <DesktopGradientLeft/> : ""
         }
 
-        {items.map((item, index) => (
-            <CustomSwiperSlide key={index}>
+          { items &&
+            items.map((item, index) => (
+              <CustomSwiperSlide key={index}>
+                {Admin ? 
+                  <div className="admin">
+                    <div className="item">
+                      <button className="itemButton" onClick={handleDetails}>
+                        <img src={`${itemImgUrl}/${item.image}`} alt="Food image" />
 
-              {Admin ? 
-                <div className="admin">
-                  <div className="item">
-                    <button className="itemButton">
-                      <img src={item.img} alt="Food image" />
+                        <div className="title">
+                          {item.title}
+                          <AiOutlineArrowRight/>
+                        </div>
+                      </button>
 
-                      <div className="title">
-                      {item.title}
-                      <AiOutlineArrowRight/>
-                      </div>
+                      <h2>{`R$${item.price}`}</h2>
+                    </div>
+
+                    <section>
+                      <Button title="Editar" RedIconButton icon={GoPencil} onClick={() => handleEdit(item.id)}/>
+                    </section>
+                  </div>
+                :
+                  <div className="customer">
+                    <button className="favButton" onClick={handleFavHeart}>
+                      {favHeartOpen ? <AiFillHeart/> : <AiOutlineHeart/>}
                     </button>
 
-                    <h2>{item.price}</h2>
+                    <div className="item">
+                      <button className="itemButton">
+                        <img src={`${itemImgUrl}/${item.image}`} alt="Food image" />
+
+                        <div className="title">
+                          {item.title}
+                          <AiOutlineArrowRight/>
+                        </div>
+                      </button>
+
+                      <h2>{`R$${item.price}`}</h2>
+                    </div>
+
+                    <section>
+                      <Amount/>
+
+                      <Button title="Incluir" />
+                    </section>
                   </div>
+                }
+              </CustomSwiperSlide>
 
-                  <section>
-                    <Button title="Editar" RedIconButton icon={GoPencil}/>
-                  </section>
-                </div>
-              :
-                <div className="customer">
-                  <button className="favButton" onClick={handleFavHeart}>
-                    {favHeartOpen ? <AiFillHeart/> : <AiOutlineHeart/>}
-                  </button>
-
-                  <div className="item">
-                    <button className="itemButton">
-                      <img src={item.img} alt="Food image" />
-
-                      <div className="title">
-                      {item.title}
-                      <AiOutlineArrowRight/>
-                      </div>
-                    </button>
-
-                    <h2>{item.price}</h2>
-                  </div>
-
-                  <section>
-                  <Amount/>
-
-                  <Button title="Incluir" />
-                  </section>
-                </div>
-              }
-
-            </CustomSwiperSlide>
-          ))
-        }
+            ))
+          }
 
         {
           isMobile ? <DesktopGradientRight/> : ""

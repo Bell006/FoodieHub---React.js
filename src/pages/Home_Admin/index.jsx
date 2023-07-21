@@ -1,46 +1,45 @@
 import { Container, Content ,Outdoor } from './styles';
-import food from "../../assets/image 2.png";
 import macarons from "../../assets/macarons.png";
 
-
-import logo from "../../assets/brand_mobile.svg";
-import { AiOutlineMail, AiOutlineLock } from "react-icons/ai";
-
-import { Input } from "../../components/Input";
-import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Slider } from '../../components/Slider';
 import { Section } from '../../components/Section';
 import { Footer } from '../../components/Footer';
 
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { api } from '../../services/api';
+
 export function Home_Admin() {
-    const item1 = {
-        img: food,
-        title: "Salada Ravanello",
-        price: "R$49,99",
+
+    const [items, setItems] = useState([]);
+    const [categories, setCategories] = useState([]);
+
+    function settingCategories() {
+        const categoriesSet = new Set(categories);
+
+        items.forEach(item => {
+            categoriesSet.add(item.category);
+        });
+
+        setCategories(Array.from(categoriesSet));
     }
 
-    const item2 = {
-        img: food,
-        title: "Spaguetti Gambe",
-        price: "R$49,99",
-    }
-    const item3 = {
-        img: food,
-        title: "Prugna Pie",
-        price: "R$49,99",
-    }
-    const item4 = {
-        img: food,
-        title: "Peachy pastrie",
-        price: "R$49,99",
-    }
-    const items = [
-        item1,
-        item2,
-        item3,
-        item4
-    ];
+    
+    useEffect(() => {
+        settingCategories();
+    }, [items]);
+
+    useEffect(() => {
+        async function fetchItems() {
+            const response = await api.get(`/items/index`);
+            setItems(response.data);
+        }
+
+        fetchItems();
+        
+    }, [])
+
     return (
         <Container>
             <Header Admin />
@@ -55,19 +54,19 @@ export function Home_Admin() {
                         <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
                     </aside>
                 </Outdoor>
-
-                <Section title="Refeições">
-                    <Slider items={items} Admin/>
-                </Section> 
-                
-                <Section title="Pratos Principais">
-                    <Slider items={items} Admin/>
-                </Section>
-
-                <Section title="Sobremesas">
-                    <Slider items={items} Admin/>
-                </Section>  
-
+                {
+                    items.length > 0 && categories.length > 0 ? (
+                        categories.map((category, index) => (
+                        <Section title={category} key={index}>
+                            <Slider items={items.filter(item => item.category === category)} Admin />
+                        </Section>
+                        ))
+                    ) : (
+                        <div className="noItems">
+                            <h1>Você ainda não possui itens cadastrados.</h1>
+                        </div>
+                    )
+                }              
             </Content>
 
             <Footer/>

@@ -83,7 +83,7 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
     
     .itemButton {
         gap: 1rem;
-
+        margin-bottom: .5rem;
         svg {
             margin-left: .5rem;
         }

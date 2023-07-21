@@ -1,19 +1,20 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { api } from '../services/api';
-import { useEffect } from "react";
-import { json } from "react-router-dom";
-
 
 export const AuthContext = createContext({});
 
 function AuthProvider({children}) {
 
     const [data, setData] = useState({});
+    const [loading, setLoading] = useState(false);
 
     async function signIn({email, password}) {
 
         try {
+            setLoading(true);
             const response = await api.post("/sessions", { email, password });
+            setLoading(false);
+
             const { user, token, adminCheck } = response.data;
 
             localStorage.setItem("@foodieHub:user", JSON.stringify(user));
@@ -22,8 +23,6 @@ function AuthProvider({children}) {
 
             api.defaults.headers.common['authorization'] = `Bearer ${token}`;
             setData({ user, token, adminCheck });
-
-            
         } catch(error) {
             if(error.response) {
                 alert(error.response.data.message)
@@ -64,6 +63,7 @@ function AuthProvider({children}) {
         <AuthContext.Provider value={{
             user: data.user,
             adminCheck: data.adminCheck,
+            loading,
             signIn,
             signOut
             }}>

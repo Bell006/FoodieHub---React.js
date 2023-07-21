@@ -15,7 +15,7 @@ export function SignIn() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const { signIn } = useAuth();
+    const { signIn, loading } = useAuth();
 
     function handleSignIn(e) {
         signIn({email, password})
@@ -40,9 +40,14 @@ export function SignIn() {
                         icon={AiOutlineLock} 
                         type="password" 
                         placeholder="senha" 
-                        onChange={e => setPassword(e.target.value)} />
+                        onChange={e => setPassword(e.target.value)} 
+                    />
+
+                    {
+                        loading ? <Button title="Entrar" loading/> : <Button title="Entrar" onClick={handleSignIn}/>
+                    }
                     
-                    <Button title="Entrar" onClick={handleSignIn}/>
+                    
                 </section>
 
                 <aside>

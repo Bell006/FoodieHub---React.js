@@ -2,45 +2,59 @@ import { Container, Content ,Outdoor } from './styles';
 import food from "../../assets/image 2.png";
 import macarons from "../../assets/macarons.png";
 
-
-import logo from "../../assets/brand_mobile.svg";
-import { AiOutlineMail, AiOutlineLock } from "react-icons/ai";
-
-import { Input } from "../../components/Input";
-import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Slider } from '../../components/Slider';
 import { Section } from '../../components/Section';
 import { Footer } from '../../components/Footer';
 
+import { useAuth } from '../../hooks/auth';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { api } from '../../services/api';
+
 export function Home() {
     const item1 = {
-        img: food,
+        image: food,
         title: "Salada Ravanello",
         price: "R$49,99",
     }
 
     const item2 = {
-        img: food,
+        image: food,
         title: "Spaguetti Gambe",
         price: "R$49,99",
     }
     const item3 = {
-        img: food,
+        image: food,
         title: "Prugna Pie",
         price: "R$49,99",
     }
     const item4 = {
-        img: food,
+        image: food,
         title: "Peachy pastrie",
         price: "R$49,99",
     }
-    const items = [
-        item1,
-        item2,
-        item3,
-        item4
-    ];
+
+    const { user } = useAuth();
+    const user_id = user.id;
+
+    const [items, setItems] = useState([]);
+    
+    console.log(items)
+
+
+
+    useEffect(() => {
+        async function fetchItems() {
+            const response = await api.get(`/items/index`);
+            setItems(response.data);
+        }
+
+        fetchItems();
+        
+    }, [])
+    
+
     return (
         <Container>
             <Header/>
