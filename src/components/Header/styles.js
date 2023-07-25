@@ -8,7 +8,6 @@ export const Container = styled.header`
 
     position: fixed;
     top: 0;
-    left: 0;
     z-index: 200;
 
     background-color: ${({ theme }) => theme.COLORS.OFF_WHITE};
@@ -39,6 +38,26 @@ export const Container = styled.header`
     }
 `;
 
+export const MobileHeader = styled.div`
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    margin: 0 2rem;
+
+    >img {
+        width: 3rem;
+    }
+
+    >button {
+        border: none;
+        background: none;
+
+        width: clamp(3rem, 5vw, 4rem);
+    }
+`;
+
 export const DesktopHeader = styled.div`
     display: grid;
     grid-template-columns: 18% 52% 16% auto;
@@ -47,13 +66,13 @@ export const DesktopHeader = styled.div`
     align-items: center;
     gap: 1rem;
 
-    width: clamp(60rem, 90vw, 110rem);
+    width: 80%;
 
     margin: 0 4rem;
 
     > img {
         grid-area: brand;
-        width: clamp(7rem, 16vw, 18rem);
+        width: clamp(4rem, 15vw, 13rem);
     }
 
     > Input {

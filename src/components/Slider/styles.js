@@ -78,16 +78,39 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
         height: 70%;
         flex-direction: column;
         justify-content: center;
+
     }
 
-    
     .itemButton {
         gap: 1rem;
         margin-bottom: .5rem;
+
         svg {
             margin-left: .5rem;
         }
+
+        .title {
+            font-size: 1.4rem;
+        }
     }
+
+    .image-wrapper {
+        border-radius: 50%;
+        overflow: hidden;
+        width: clamp(10rem, 15vw, 11rem);
+        height: clamp(10rem, 15vw, 11rem);
+        position: relative; 
+
+        img {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover;
+            position: absolute; 
+            top: 0;
+            left: 0;
+        }
+    }
+  
 
     .favButton {
         position: relative;
@@ -120,9 +143,7 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
         flex-direction: column;
     }
 
-    img {
-        width: clamp(8rem, 15vw, 11rem);
-    }
+
 
     @media (min-width: 600px) {
         height: 32rem;

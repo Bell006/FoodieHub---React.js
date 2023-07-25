@@ -38,11 +38,6 @@ export function Slider({ items, Admin }) {
     return navigate(`/details/${item_id}`);
   }
 
-
-
-
-
-    
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth >= 770);
@@ -91,8 +86,10 @@ export function Slider({ items, Admin }) {
                 {Admin ? 
                   <div className="admin">
                     <div className="item">
-                      <button className="itemButton" onClick={handleDetails}>
-                        <img src={`${itemImgUrl}/${item.image}`} alt="Food image" />
+                      <button className="itemButton" onClick={() => handleDetails(item.id)}>
+                        <div className="image-wrapper">
+                          <img src={`${itemImgUrl}/${item.image}`} alt="Food image" />
+                        </div>
 
                         <div className="title">
                           {item.title}
@@ -114,8 +111,10 @@ export function Slider({ items, Admin }) {
                     </button>
 
                     <div className="item">
-                      <button className="itemButton">
-                        <img src={`${itemImgUrl}/${item.image}`} alt="Food image" />
+                      <button className="itemButton" onClick={() => handleDetails(item.id)}>
+                        <div className="image-wrapper">
+                          <img src={`${itemImgUrl}/${item.image}`} alt="Food image" />
+                        </div>
 
                         <div className="title">
                           {item.title}

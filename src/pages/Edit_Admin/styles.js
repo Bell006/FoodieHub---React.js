@@ -7,6 +7,7 @@ export const Container = styled.div`
     display: grid;
     grid-template-rows: 11rem auto 7.5rem;
     grid-template-areas: "header" "content" "footer";
+    position: relative;
 
     > main, form, .input-wrapper, .textArea-wrapper, .img-wrapper {
         display: flex;

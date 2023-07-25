@@ -7,6 +7,7 @@ export const Container = styled.div`
     display: grid;
     grid-template-rows: 11rem auto 7.5rem;
     grid-template-areas: "header" "content" "footer";
+    position: relative;
 
 
     @media(min-width: 650px) {
@@ -31,10 +32,34 @@ export const Content = styled.div`
 
     margin: 0 2rem;
 
+    .image-wrapper, section {
+        display: flex;
+    }
+
+    .image-wrapper {
+        border-radius: 50%;
+        overflow: hidden;
+        width: clamp(18rem, 40vw, 33rem);
+        height: clamp(18rem, 40vw, 33rem);
+        position: relative; /* Adiciona position: relative para permitir o posicionamento absoluto da imagem */
+
+                
+        img {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover;
+            position: absolute; 
+            top: 0;
+            left: 0;
+        }
+    }
+
     section {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        margin-top: 1.5rem;
         
         gap: 2rem;
         > h1 {
@@ -42,7 +67,7 @@ export const Content = styled.div`
         }
     }
 
-
+    
 
     @media(min-width: 650px) {
         display: grid;
@@ -62,7 +87,7 @@ export const Content = styled.div`
             grid-area: backButton;
         }
         
-        >img {
+        >.image-wrapper {
             grid-area: img;
 
             margin-right: 2rem;

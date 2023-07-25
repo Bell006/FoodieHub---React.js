@@ -11,10 +11,9 @@ function AuthProvider({children}) {
     async function signIn({email, password}) {
 
         try {
-            setLoading(true);
             const response = await api.post("/sessions", { email, password });
-            setLoading(false);
-
+            setLoading(true);
+            
             const { user, token, adminCheck } = response.data;
 
             localStorage.setItem("@foodieHub:user", JSON.stringify(user));
@@ -23,12 +22,14 @@ function AuthProvider({children}) {
 
             api.defaults.headers.common['authorization'] = `Bearer ${token}`;
             setData({ user, token, adminCheck });
+            setLoading(false);
         } catch(error) {
             if(error.response) {
                 alert(error.response.data.message)
             } else {
                 alert("Não foi possível conectar.")
             }
+            setLoading(false);
         }
     }
 

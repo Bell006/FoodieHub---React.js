@@ -1,10 +1,12 @@
 import { Container, Content ,Outdoor } from './styles';
 import macarons from "../../assets/macarons.png";
+import {  MdSearch } from 'react-icons/md';
 
 import { Header } from '../../components/Header';
 import { Slider } from '../../components/Slider';
 import { Section } from '../../components/Section';
 import { Footer } from '../../components/Footer';
+import { Input } from '../../components/Input';
 
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -14,6 +16,8 @@ export function Home_Admin() {
 
     const [items, setItems] = useState([]);
     const [categories, setCategories] = useState([]);
+
+    const [search, setSearch] = useState("");
 
     function settingCategories() {
         const categoriesSet = new Set(categories);
@@ -40,9 +44,25 @@ export function Home_Admin() {
         
     }, [])
 
+    useEffect(() => {
+        async function fetchItems() {
+            const searchBar = await api.get(`/items/index?&title=${search}`);
+            setItems(searchBar.data);
+        }
+
+        fetchItems();
+    }, [search])
+    
+
     return (
         <Container>
-            <Header Admin />
+            <Header Admin >
+                <Input 
+                    icon={MdSearch} 
+                    placeholder="Busque por pratos ou ingredientes"
+                    onChange={e => setSearch(e.target.value)}
+                />
+            </Header>
 
             <Content>
                 <Outdoor>

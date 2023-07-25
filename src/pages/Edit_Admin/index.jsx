@@ -24,13 +24,12 @@ export function Edit_Admin() {
     const [item, setItem] = useState({});
     
     const [title, setTitle] = useState("");
-    const [price, setPrice] = useState(0);
+    const [price, setPrice] = useState("");
     const [category, setCategory] = useState("");
-    const [currentImg, setCurrentImg] = useState("");
     const [description, setDescription] = useState("");
     
     const [newImg, setNewImg] = useState(null);
-    const [labelText, setLabelText] = useState("");
+    const [currentImg, setCurrentImg] = useState("");
     
     const [ingredients, setIngredients] = useState("");
     const [newIngredient, setNewIngredient] = useState("");
@@ -45,6 +44,11 @@ export function Edit_Admin() {
         try {
             const response = await api.get(`/items/details/${item_id}`);
             setItem(response.data);
+
+            if(response.data.ingredients) {
+                setIngredients(response.data.ingredients.map((ingredient) => ingredient.name));
+            } 
+
         } catch(error) {
             if(error.response) {
                 alert(error.response.data.message)
@@ -83,6 +87,7 @@ export function Edit_Admin() {
                 fileUploadForm.append("image", newImg);
                 const imgUpload = await api.patch(`items/img/${item_id}`, fileUploadForm);
             }
+
             alert("Item atualizado!")
             handleBack();
         } catch(error) {
@@ -93,6 +98,7 @@ export function Edit_Admin() {
             }
         }
     }
+
 
     async function handleDelete() {
         const deleteItem = confirm("Deseja deletar o item?");
@@ -141,7 +147,7 @@ export function Edit_Admin() {
                             <FoodImg htmlFor='img' >
                                 <label>
                                     <AiOutlineUpload/>
-                                    {labelText ? labelText : currentImg}
+                                    {currentImg}
                                     <input
                                         id='img'
                                         type='file'
@@ -207,7 +213,7 @@ export function Edit_Admin() {
                             <label htmlFor="description" >Descrição</label>
                             <TextArea 
                                 id='description' 
-                                value={description}
+                                value={item.description}
                                 onChange={e => setDescription(e.target.value)}
                             />
                         </div>

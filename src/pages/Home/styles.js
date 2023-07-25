@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    height: 100%;
+    height: 100vh;
+    width: 100%;
 
     display: grid;
     justify-items: center;
     grid-template-rows: 11rem auto 7.5rem;
     grid-template-areas: "header" "content" "footer";
 
-    overflow: hidden;  
+    position: relative;
 `;
 
 export const Content = styled.div`
@@ -23,9 +24,36 @@ export const Content = styled.div`
 
     max-width: 90rem;
 
+    .noItems {
+        height: 100%;
+        width: 100%;
+
+        padding: 10rem 0;
+
+        img {
+            width: 100%;
+        }
+
+        h1 {
+            color: ${({ theme }) => theme.COLORS.GREY};  
+            font-size: clamp(1.4rem, 3vw, 3rem);
+            text-align: center;
+            line-height: 2.8rem;
+            margin: 0 auto;
+
+            max-width: 20rem;
+        }
+    }
+
     @media (min-width: 650px) {
          padding-top: 9rem;
-    }  
+
+         .noItems {
+            h1 {
+                max-width: 60rem;
+            }
+    }
+    }   
 `;
 
 export const Outdoor = styled.div`
@@ -38,7 +66,7 @@ export const Outdoor = styled.div`
     grid-template-rows: 1fr;
     grid-template-areas: "macarons text";
     position: relative;
-    margin: 3rem 0;
+    margin: 5rem 0 3rem;
     background: linear-gradient(180deg, #2F2E4C 0%, #161633 100%);
     border-radius: .5rem;
 

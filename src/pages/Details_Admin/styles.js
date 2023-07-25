@@ -2,10 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     height: 100vh;
+    width: 100%;
 
     display: grid;
     grid-template-rows: 11rem auto 7.5rem;
     grid-template-areas: "header" "content" "footer";
+    position: relative;
 
 
     @media(min-width: 650px) {
@@ -26,8 +28,29 @@ export const Content = styled.div`
     text-align: center;
     margin: 0 2rem;
 
-    section {
+    .image-wrapper, section {
         display: flex;
+    }
+
+    .image-wrapper {
+        border-radius: 50%;
+        overflow: hidden;
+        width: clamp(18rem, 40vw, 33rem);
+        height: clamp(18rem, 40vw, 33rem);
+        position: relative; /* Adiciona position: relative para permitir o posicionamento absoluto da imagem */
+
+                
+        img {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover;
+            position: absolute; 
+            top: 0;
+            left: 0;
+        }
+    }
+
+    section {
         flex-direction: column;
         align-items: center;
         
@@ -62,10 +85,14 @@ export const Content = styled.div`
             grid-area: backButton;
         }
         
-        >img {
+        >.image-wrapper {
             grid-area: img;
 
             margin-right: 2rem;
+
+            img {
+                object-fit: cover;
+            }
         }
         
         > section {

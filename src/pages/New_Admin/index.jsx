@@ -68,15 +68,7 @@ export function New_Admin() {
             
             alert("Item cadastrado com sucesso!");
             
-            navigate(`/items/details/${item_id}`, { state: 
-                {   title, 
-                    price, 
-                    category, 
-                    currentImg, 
-                    description, 
-                    ingredients
-                } 
-            });
+            handleBack();
         } catch(error) {
             if (error.response) {
                 alert(error.response.data.message);

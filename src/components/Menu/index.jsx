@@ -11,7 +11,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ReactDOM from 'react-dom';
 
-export function Menu({ Admin, ...rest}) {
+export function Menu({ Admin, children,...rest}) {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleButtonClick = () => {
@@ -37,14 +37,6 @@ export function Menu({ Admin, ...rest}) {
                 <MenuBar  className={isOpen ? 'open' : 'closed'}>
                     
                     <Section title="Menu"/>
-                    
-                    <header>
-
-                        <p>Pesquisar refeições:</p>
-                        <p>(estabelecimento, ingredientes...)</p>
-                        <Input placeholder="Pesquisar" icon={MdSearch} type="text"/>
-
-                    </header>
 
                     <main>
                         <ul>

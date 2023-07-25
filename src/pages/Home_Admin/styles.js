@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    height: 100%;
+    height: 100vh;
 
     display: grid;
     justify-items: center;
     grid-template-rows: 11rem auto 7.5rem;
     grid-template-areas: "header" "content" "footer";
 
-    overflow: hidden;
+    position: relative;
 `;
 
 export const Content = styled.div`

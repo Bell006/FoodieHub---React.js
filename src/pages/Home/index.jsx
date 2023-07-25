@@ -1,63 +1,60 @@
 import { Container, Content ,Outdoor } from './styles';
-import food from "../../assets/image 2.png";
 import macarons from "../../assets/macarons.png";
+import {  MdSearch } from 'react-icons/md';
 
 import { Header } from '../../components/Header';
 import { Slider } from '../../components/Slider';
 import { Section } from '../../components/Section';
 import { Footer } from '../../components/Footer';
+import { Input } from '../../components/Input';
 
-import { useAuth } from '../../hooks/auth';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { api } from '../../services/api';
 
 export function Home() {
-    const item1 = {
-        image: food,
-        title: "Salada Ravanello",
-        price: "R$49,99",
-    }
-
-    const item2 = {
-        image: food,
-        title: "Spaguetti Gambe",
-        price: "R$49,99",
-    }
-    const item3 = {
-        image: food,
-        title: "Prugna Pie",
-        price: "R$49,99",
-    }
-    const item4 = {
-        image: food,
-        title: "Peachy pastrie",
-        price: "R$49,99",
-    }
-
-    const { user } = useAuth();
-    const user_id = user.id;
 
     const [items, setItems] = useState([]);
+    const [categories, setCategories] = useState("");
+
+    const [search, setSearch] = useState("");
+
+    function settingCategories() {
+        const categoriesSet = new Set(categories);
+
+        items.forEach(item => {
+            categoriesSet.add(item.category);
+        });
+
+        setCategories(Array.from(categoriesSet));
+    }
+
+
+
     
-    console.log(items)
-
-
+    useEffect(() => {
+        settingCategories();
+    }, [items]);
 
     useEffect(() => {
         async function fetchItems() {
-            const response = await api.get(`/items/index`);
-            setItems(response.data);
+            const searchBar = await api.get(`/items/index?&title=${search}`);
+            setItems(searchBar.data);
         }
 
         fetchItems();
-        
-    }, [])
+    }, [search])
     
 
     return (
         <Container>
-            <Header/>
+            <Header>
+                <Input 
+                    icon={MdSearch} 
+                    placeholder="Busque por pratos ou ingredientes"
+                    onChange={e => setSearch(e.target.value)}
+                />
+            </Header>
 
             <Content>
                 <Outdoor>
@@ -70,17 +67,25 @@ export function Home() {
                     </aside>
                 </Outdoor>
 
-                <Section title="Refeições">
-                    <Slider items={items}/>
-                </Section> 
-                
-                <Section title="Pratos Principais">
-                    <Slider items={items}/>
-                </Section>
+                {
+                    items.length > 0 && categories.length > 0 ? (
+                        categories.map((category, index) => {
+                            const itemsInCategory = items.filter(item => item.category === category);
 
-                <Section title="Sobremesas">
-                    <Slider items={items}/>
-                </Section>  
+                            if(itemsInCategory.length > 0) {
+                                return(
+                                    <Section title={category} key={index}>
+                                        <Slider items={items.filter(item => item.category === category)}/>
+                                    </Section>
+                                )
+                            }
+                        })
+                    ) : (
+                        <div className="noItems">
+                            <h1>Não encontramos nenhum produto :(</h1>
+                        </div>
+                    )
+                }    
 
             </Content>
 

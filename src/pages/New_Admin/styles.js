@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    height: 100vh;
     width: 100%;
-    height: 100%;
 
     display: grid;
     grid-template-rows: 11rem auto 7.5rem;

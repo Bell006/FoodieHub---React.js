@@ -1,12 +1,13 @@
-import { Container, DesktopHeader } from "../Header/styles";
+import { Container, DesktopHeader, MobileHeader } from "../Header/styles";
 
 import { FiShoppingBag } from "react-icons/fi";
 import { GrConfigure } from 'react-icons/gr';
 import { BiExit } from "react-icons/bi";
-import { MdAddCircle, MdSearch, MdOutlineShoppingBasket } from 'react-icons/md';
+import { MdAddCircle, MdOutlineShoppingBasket } from 'react-icons/md';
 
 import logo from "../../assets/logo.svg";
-import logoAdmin from "../../assets/Logo_admin.svg";
+import iconMobile from "../../assets/favicon.svg";
+import logoAdmin from "../../assets/Logo_admin.svg"
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +18,7 @@ import { Button } from "../Button";
 
 import { useAuth } from "../../hooks/auth";
 
-export function Header({Admin}) {
+export function Header({Admin, children, SearchBarOff}) {
     const [isMobile, setIsMobile] = useState(false);
 
     const { signOut } = useAuth();
@@ -53,17 +54,15 @@ export function Header({Admin}) {
 
 
     return(
-      <Container Admin={Admin}>
-
+      <Container Admin={Admin} SearchBarOff={SearchBarOff}>
         { isMobile ? 
-          (<>
-            { Admin ? <Menu Admin/>  : <Menu/> }
-            { Admin ?  
-              <img src={logoAdmin} alt="Brand admin logo" onClick={handleHome}/> : 
-              <img src={logo} alt="Brand logo" onClick={handleHome}/> 
-            }
-            { !Admin ?   <button> <FiShoppingBag/></button> : ""  }
-          </>) 
+            (<MobileHeader>
+              {Admin ? <Menu Admin/> :  <Menu/>} 
+
+              {children}
+
+              {Admin ?  <img src={iconMobile} alt="Brand logo" onClick={handleHome}/> : <button><FiShoppingBag/></button>}
+            </MobileHeader>) 
           : 
           <DesktopHeader>
               { Admin ?  
@@ -71,7 +70,7 @@ export function Header({Admin}) {
                 <img src={logo} alt="Brand logo" onClick={handleHome}/> 
               }
 
-              <Input icon={MdSearch} placeholder="Busque por pratos ou ingredientes"/>
+              {children}
 
               <Button title="Incluir" RedIconButton icon={MdAddCircle}/>
 
@@ -101,7 +100,6 @@ export function Header({Admin}) {
               </div>
           </DesktopHeader>
         }
-            
       </Container>
     );
 }
