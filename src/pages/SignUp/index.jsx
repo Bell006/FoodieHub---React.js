@@ -18,8 +18,8 @@ export function SignUp() {
 
     const navigate = useNavigate();
 
-    function handelSignUp() {
-        api.post("users", {name, email, password, isAdmin})
+    function handleSignUp() {
+        api.post("/users", {name, email, password, isAdmin})
         .then(() => {
             alert("Usuário cadastrado com sucesso!")
             navigate(-1)
@@ -44,7 +44,7 @@ export function SignUp() {
                     <Input icon={AiOutlineMail} type="text" placeholder="Email" onChange={e => setEmail(e.target.value)}/>
                     <Input icon={AiOutlineLock} type="password" placeholder="Senha" onChange={e => setPassword(e.target.value)}/>
 
-                    <Button title="Criar conta" onClick={handelSignUp}/>
+                    <Button title="Criar conta" onClick={handleSignUp}/>
 
                     <Admin>
                         <label class="form-control">

@@ -30,12 +30,12 @@ export function Header({Admin, children, SearchBarOff}) {
       if(exit) {
         signOut();
         navigate("/");
-      }
-    }
+      };
+    };
 
     function handleHome() {
-      navigate("/")
-    }
+      navigate("/");
+    };
 
 
     useEffect(() => {
@@ -61,12 +61,17 @@ export function Header({Admin, children, SearchBarOff}) {
 
               {children}
 
-              {Admin ?  <img src={iconMobile} alt="Brand logo" onClick={handleHome}/> : <button><FiShoppingBag/></button>}
+              { Admin ?  
+                <img src={iconMobile} alt="Brand logo" onClick={handleHome}/> 
+                : 
+                <button><FiShoppingBag/></button>
+              }
             </MobileHeader>) 
           : 
           <DesktopHeader>
               { Admin ?  
-                <img src={logoAdmin} alt="Brand admin logo" onClick={handleHome}/> : 
+                <img src={logoAdmin} alt="Brand admin logo" onClick={handleHome}/> 
+                : 
                 <img src={logo} alt="Brand logo" onClick={handleHome}/> 
               }
 

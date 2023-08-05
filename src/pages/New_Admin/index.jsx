@@ -56,7 +56,6 @@ export function New_Admin() {
     }
 
     async function handleAddItem() {
-
         try {
             const response = await api.post("/items", { title, description, price, ingredients, category });
             const item_id = response.data.id;

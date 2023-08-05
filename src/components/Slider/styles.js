@@ -110,22 +110,7 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
             left: 0;
         }
     }
-  
 
-    .favButton {
-        position: relative;
-
-        top: 1rem;
-        left: 5rem;
-
-        > svg {
-            width: 1.5rem;
-            height: 1.5rem;
-
-            color: ${({ theme }) => theme.COLORS.RED};
-        }
-    }
-    
 
     h2 {
         font-size: 1.5rem;
@@ -159,16 +144,6 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
         h2 {
             font-size: 2rem;
             margin-bottom: 1rem;
-        }
-
-        .favButton {
-            top: .5rem;
-            left: 7rem;
-
-            > svg {
-                width: 2rem;
-                height: 2rem;
-            }
         }
     }
 `;

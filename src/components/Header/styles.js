@@ -42,6 +42,7 @@ export const MobileHeader = styled.div`
     width: 80%;
     display: flex;
     align-items: center;
+    justify-content: space-around;
     gap: 2rem;
 
     margin: 0 2rem;
@@ -60,19 +61,19 @@ export const MobileHeader = styled.div`
 
 export const DesktopHeader = styled.div`
     display: grid;
-    grid-template-columns: 18% 52% 16% auto;
+    grid-template-columns: 18% 55% 18% auto;
     grid-template-areas: "brand search button sideButtons";
 
     align-items: center;
     gap: 1rem;
 
-    width: 80%;
+    width: 60%;
 
     margin: 0 4rem;
 
     > img {
         grid-area: brand;
-        width: clamp(4rem, 15vw, 13rem);
+        width: clamp(8rem, 10vw, 18rem);
     }
 
     > Input {

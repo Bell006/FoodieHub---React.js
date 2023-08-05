@@ -2,11 +2,12 @@ import { Container, DesktopGradientRight, CustomSwiper, CustomSwiperSlide, Deskt
 
 import { useState, useEffect } from "react";
 
-import { AiOutlineHeart, AiFillHeart ,AiOutlineArrowRight } from "react-icons/ai";
+import { AiOutlineArrowRight } from "react-icons/ai";
 import { GoPencil } from 'react-icons/go';
 
 import { Button } from "../Button";
 import { Amount } from "../Amount";
+import { FavButton } from "../FavButton";
 
 import SwiperCore, { Pagination, Navigation } from "swiper";
 import "swiper/swiper-bundle.min.css";
@@ -26,10 +27,6 @@ export function Slider({ items, Admin }) {
 
   const navigate = useNavigate();
   
-  function handleFavHeart() {
-    setFavHeartOpen(!favHeartOpen);
-  }
-
   function handleEdit(item_id) {
     return navigate(`/edit/${item_id}`);
   }
@@ -106,9 +103,7 @@ export function Slider({ items, Admin }) {
                   </div>
                 :
                   <div className="customer">
-                    <button className="favButton" onClick={handleFavHeart}>
-                      {favHeartOpen ? <AiFillHeart/> : <AiOutlineHeart/>}
-                    </button>
+                    <FavButton/>
 
                     <div className="item">
                       <button className="itemButton" onClick={() => handleDetails(item.id)}>

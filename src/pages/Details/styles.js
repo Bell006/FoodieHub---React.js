@@ -9,10 +9,17 @@ export const Container = styled.div`
     grid-template-areas: "header" "content" "footer";
     position: relative;
 
+    .logo {
+        width: 17rem;
+    }
+
 
     @media(min-width: 650px) {
         justify-items: center;
 
+        .logo {
+            display: none;
+        }
     }
 `;
 
