@@ -38,7 +38,7 @@ export const CustomSwiper = styled(Swiper)`
     @media (min-width: 650px) {
         width: clamp(70rem, 100vw, 80rem);
     
-    }
+    };
 `;
 
 export const CustomSwiperSlide = styled(SwiperSlide)`
@@ -55,7 +55,7 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
     .admin, .customer, .itemButton, .item, section {
         display: flex;
         align-items: center;
-    }
+    };
     
     .admin, .customer, .itemButton {
         width: 100%;
@@ -63,23 +63,23 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
 
         flex-direction: column;
         justify-content: center;
-    }
+    };
 
     .favButton, .itemButton, p {
         border: none;
         background: none;
-    }
+    };
 
     .customer {
         position: relative;
-    }
+    };
 
     .item {
         height: 70%;
         flex-direction: column;
         justify-content: center;
 
-    }
+    };
 
     .itemButton {
         gap: 1rem;
@@ -87,12 +87,12 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
 
         svg {
             margin-left: .5rem;
-        }
+        };
 
         .title {
             font-size: 1.4rem;
-        }
-    }
+        };
+    };
 
     .image-wrapper {
         border-radius: 50%;
@@ -108,8 +108,8 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
             position: absolute; 
             top: 0;
             left: 0;
-        }
-    }
+        };
+    };
 
 
     h2 {
@@ -117,7 +117,7 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
         margin-bottom: 1rem;
 
         color: ${({ theme }) => theme.COLORS.LIGHT_BLUE};
-    }
+    };
 
     section {
         width: 100%;
@@ -126,7 +126,7 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
         gap: .5rem;
 
         flex-direction: column;
-    }
+    };
 
 
 
@@ -144,6 +144,6 @@ export const CustomSwiperSlide = styled(SwiperSlide)`
         h2 {
             font-size: 2rem;
             margin-bottom: 1rem;
-        }
-    }
+        };
+    };
 `;

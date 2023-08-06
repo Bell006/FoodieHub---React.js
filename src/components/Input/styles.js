@@ -28,8 +28,8 @@ export const Container = styled.div`
 
         &:placeholder {
             color: ${({ theme }) => theme.COLORS.GREY};
-        }
-    }
+        };
+    };
 
 
 `;

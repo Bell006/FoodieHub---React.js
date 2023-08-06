@@ -16,7 +16,7 @@ export const Container = styled.div`
     input, button {
         border: none;
         background: none;
-    }
+    };
 
     input {
         width: 100%;
@@ -26,14 +26,14 @@ export const Container = styled.div`
         padding: 1.2rem;
  
         color: ${({ theme, isNew }) => isNew ? theme.COLORS.BLUE_800 : theme.COLORS.OFF_WHITE};
-    }
+    };
 
     .button-add {
         color: ${({ theme }) => theme.COLORS.GREEN};
-    }
+    };
 
     .button-delete {
         color: ${({ theme }) => theme.COLORS.RED};
-    }
+    };
 `;
 

@@ -17,25 +17,25 @@ export const Container = styled.div`
         align-items: center;
 
         max-width: 32rem;
-    }
+    };
 
     > main {
         gap: .8rem;
-    }
+    };
 
     section {
         gap: 1.5rem;
         height: 33rem;
-    }
+    };
 
     aside {
         gap: .5rem;
-    }
+    };
 
 
     a {
         color: ${({ theme }) => theme.COLORS.LIGHT_BLUE};
-    }
+    };
 
     background: url(${logoIcon}) no-repeat 12rem 37rem;
 
@@ -45,8 +45,8 @@ export const Container = styled.div`
         
         > main, section, aside {
             width: 40rem;
-        }
-    }   
+        };
+    };  
 `;
 
 export const Logo = styled.div`
@@ -67,16 +67,16 @@ export const Admin = styled.div`
         grid-template-columns: 1em auto;
         gap: .8em;
         align-items: center;
-    }
+    };
 
     .form-control + .form-control {
         margin-top: 1em;
-    }
+    };
 
     .form-control--disabled {
         color: var(--form-control-disabled);
         cursor: not-allowed;
-    }
+    };
 
     input[type="checkbox"] {
         -webkit-appearance: none;
@@ -92,7 +92,7 @@ export const Admin = styled.div`
 
         display: grid;
         place-content: center;
-    }
+    };
 
     input[type="checkbox"]::before {
     content: "";
@@ -103,21 +103,20 @@ export const Admin = styled.div`
         transform-origin: bottom left;
         transition: 120ms transform ease-in-out;
         background-color: CanvasText;
-    }
+    };
 
     input[type="checkbox"]:checked::before {
         transform: scale(1);
-    }
+    };
 
     input[type="checkbox"]:focus {
         outline: max(2px, 0.15em) solid;
         outline-offset: max(2px, 0.15em);
-    }
+    };
 
     input[type="checkbox"]:disabled {
         color: ${({ theme }) => theme.COLORS.BLUE_900};
         cursor: not-allowed;
-    }
-
+    };
 
 `;

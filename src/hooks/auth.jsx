@@ -30,8 +30,8 @@ function AuthProvider({children}) {
                 alert("Não foi possível conectar.")
             }
             setLoading(false);
-        }
-    }
+        };
+    };
 
     async function signOut() {
         localStorage.removeItem("@foodieHub:user");
@@ -39,7 +39,7 @@ function AuthProvider({children}) {
         localStorage.removeItem("@foodieHub:admin");
 
         setData({})
-    }
+    };
     
     
     useEffect(() => {
@@ -54,8 +54,8 @@ function AuthProvider({children}) {
                 user: JSON.parse(user),
                 token,
                 adminCheck
-            })
-        }
+            });
+        };
 
 
     }, []);
@@ -70,7 +70,7 @@ function AuthProvider({children}) {
             }}>
             {children}
         </AuthContext.Provider>
-    )
+    );
 };
 
 function useAuth() {

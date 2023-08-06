@@ -8,8 +8,7 @@ export const Container = styled.div`
         width: clamp(2rem, 5vw, 4rem);
 
 
-    }
-
+    };
 `;
 
 export const MenuBar = styled.div`
@@ -29,16 +28,16 @@ export const MenuBar = styled.div`
 
     main, header {
         margin: 1.5rem;
-    }
+    };
 
     p {
         font-size: clamp(1rem, 5vw, 1.8rem);
-    }
+    };
 
     p:nth-child(2) {
         color: ${({ theme }) => theme.COLORS.GREY};
         margin-bottom: 1rem;
-    }
+    };
 
 
 
@@ -47,8 +46,8 @@ export const MenuBar = styled.div`
 
         li:last-child {
             color: ${({ theme }) => theme.COLORS.RED}; 
-        }
-    }
+        };
+    };
 
     li {
         font-size: clamp(2rem, 5vw, 3rem);
@@ -59,7 +58,7 @@ export const MenuBar = styled.div`
 
         svg {
             margin-right: 1rem;
-        }
-    }
+        };
+    };
 `;
 

@@ -17,7 +17,7 @@ export const Container = styled.div`
         left: 15%;
         transform-origin: 50%;
         animation: circle7124 .5s alternate infinite ease;
-    }
+    };
 
     @keyframes circle7124 {
         0% {
@@ -25,27 +25,27 @@ export const Container = styled.div`
             height: 5px;
             border-radius: 50px 50px 25px 25px;
             transform: scaleX(1.7);
-        }
+        };
 
         40% {
             height: .4rem;
             border-radius: 50%;
             transform: scaleX(1);
-        }
+        };
 
         100% {
             top: 0%;
-        }
+        };
     }
 
     .circle:nth-child(2) {
         left: 45%;
         animation-delay: .2s;
-    }
+    };
 
     .circle:nth-child(3) {
         left: auto;
         right: 15%;
         animation-delay: .3s;
-    }
+    };
 `;

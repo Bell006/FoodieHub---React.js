@@ -27,7 +27,7 @@ export function Home_Admin() {
         });
 
         setCategories(Array.from(categoriesSet));
-    }
+    };
 
     
     useEffect(() => {

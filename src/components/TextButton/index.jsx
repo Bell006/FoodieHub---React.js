@@ -7,4 +7,4 @@ export function TextButton({title, placeholder, icon: Icon, ...rest}) {
             { title }
         </Container>
     );
-}
+};

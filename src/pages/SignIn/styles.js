@@ -17,25 +17,25 @@ export const Container = styled.div`
         align-items: center;
 
         max-width: 32rem;
-    }
+    };
 
     > main {
         gap: 2rem;
-    }
+    };
 
     section {
         gap: 1.5rem;
         height: 20rem;
-    }
+    };
 
     aside {
         gap: .5rem;
-    }
+    };
 
 
     a {
         color: ${({ theme }) => theme.COLORS.LIGHT_BLUE};
-    }
+    };
 
     background: url(${logoIcon}) no-repeat 12rem 37rem;
 
@@ -45,8 +45,8 @@ export const Container = styled.div`
         
         > main, section, aside {
             width: 40rem;
-        }
-    }   
+        };
+    }; 
 `;
 
 export const Logo = styled.div`

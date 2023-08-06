@@ -10,4 +10,4 @@ export default {
         OFF_WHITE: "#F7F7F7",
         GREY: "#C9C3C1",
     }
-}
+};

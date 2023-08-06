@@ -13,7 +13,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Menu } from '../Menu';
-import { Input } from "../Input";
 import { Button } from "../Button";
 
 import { useAuth } from "../../hooks/auth";

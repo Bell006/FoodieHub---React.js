@@ -13,7 +13,7 @@ export const Container = styled.div`
     @media(min-width: 650px) {
         justify-items: center;
 
-    }
+    };
 `;
 
 export const Content = styled.div`

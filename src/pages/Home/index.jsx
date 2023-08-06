@@ -27,7 +27,7 @@ export function Home() {
         });
 
         setCategories(Array.from(categoriesSet));
-    }
+    };
 
 
 

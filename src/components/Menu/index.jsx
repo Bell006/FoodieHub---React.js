@@ -25,7 +25,7 @@ export function Menu({ Admin, children,...rest}) {
     function handleSignOut() {
       signOut();
       navigate("/");
-    }
+    };
     
     return(
         <Container Admin={Admin}>
@@ -63,7 +63,7 @@ export function Menu({ Admin, children,...rest}) {
 
                 </MenuBar>,
                 document.body
-            )}
+            )};
         </Container>
     );
 };

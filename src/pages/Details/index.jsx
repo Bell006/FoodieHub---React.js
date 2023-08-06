@@ -1,5 +1,4 @@
 import { Container, Content, MealImg, Tags, Order } from './styles';
-import food from "../../assets/FoodTestHD.png";
 
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { BiMoney } from "react-icons/bi";
@@ -21,7 +20,7 @@ export function Details() {
 
     function handleBack() {
         navigate(-1)
-    }
+    };
 
     const params = useParams();
     const item_id = params.id;
@@ -45,8 +44,8 @@ export function Details() {
             } else {
                 alert("Não foi possível buscar dados antigos do item.")
             }
-        }
-    }
+        };
+    };
 
 
 

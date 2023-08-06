@@ -11,7 +11,7 @@ export const Container = styled.button`
         height: 1.5rem;
 
         color: ${({ theme }) => theme.COLORS.RED};
-    }
+    };
 
     border: none;
     background: none;
@@ -21,7 +21,7 @@ export const Container = styled.button`
         height: 2rem;
 
         color: ${({ theme }) => theme.COLORS.RED};
-    }
+    };
 
     @media (min-width: 600px) {
         top: .5rem;
@@ -30,7 +30,7 @@ export const Container = styled.button`
         > svg {
             width: 2rem;
             height: 2rem;
-        }
-    }
+        };
+    };
 `;
 

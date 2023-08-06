@@ -11,7 +11,7 @@ export const Container = styled.div`
 
     .logo {
         width: 17rem;
-    }
+    };
 
 
     @media(min-width: 650px) {
@@ -19,8 +19,8 @@ export const Container = styled.div`
 
         .logo {
             display: none;
-        }
-    }
+        };
+    };
 `;
 
 export const Content = styled.div`
@@ -41,7 +41,7 @@ export const Content = styled.div`
 
     .image-wrapper, section {
         display: flex;
-    }
+    };
 
     .image-wrapper {
         border-radius: 50%;
@@ -58,8 +58,8 @@ export const Content = styled.div`
             position: absolute; 
             top: 0;
             left: 0;
-        }
-    }
+        };
+    };
 
     section {
         display: flex;
@@ -69,10 +69,11 @@ export const Content = styled.div`
         margin-top: 1.5rem;
         
         gap: 2rem;
+
         > h1 {
             color: ${({ theme }) => theme.COLORS.BLUE_900};
-        }
-    }
+        };
+    };
 
     
 
@@ -92,13 +93,13 @@ export const Content = styled.div`
             
         >TextButton {
             grid-area: backButton;
-        }
+        };
         
         >.image-wrapper {
             grid-area: img;
 
             margin-right: 2rem;
-        }
+        };
         
         > section {
             grid-area: description;
@@ -108,9 +109,9 @@ export const Content = styled.div`
             
             h1 {
                 font-size: 2.5rem;
-            }
-        }
-    }
+            };
+        };
+    };
 `;
 
 export const MealImg = styled.img`
@@ -127,7 +128,7 @@ export const Tags = styled.div`
     @media(min-width: 650px) {
         justify-content: left;
 
-    }
+    };
 `;
 
 export const Order = styled.div`
@@ -147,5 +148,5 @@ export const Order = styled.div`
     @media(min-width: 650px) {
         gap: 3rem;
         padding-right: 3rem;
-    }
+    };
 `;

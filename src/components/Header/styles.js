@@ -26,16 +26,16 @@ export const Container = styled.header`
 
         width: clamp(2rem, 5vw, 4rem);
         height: clamp(2rem, 5vw, 4rem);
-    }
+    };
 
     button svg {
         width: 100%;
         height: 100%;
-    }
+    };
 
     > img {
         width: clamp(12rem, 40vw, 30rem);
-    }
+    };
 `;
 
 export const MobileHeader = styled.div`
@@ -49,14 +49,14 @@ export const MobileHeader = styled.div`
 
     >img {
         width: 3rem;
-    }
+    };
 
     >button {
         border: none;
         background: none;
 
         width: clamp(3rem, 5vw, 4rem);
-    }
+    };
 `;
 
 export const DesktopHeader = styled.div`
@@ -74,15 +74,15 @@ export const DesktopHeader = styled.div`
     > img {
         grid-area: brand;
         width: clamp(8rem, 10vw, 18rem);
-    }
+    };
 
     > Input {
         grid-area: search;
-    }
+    };
 
     > Button {
         grid-area: button;
-    }
+    };
 
     .sideButtons {
         grid-area: sideButtons;
@@ -98,9 +98,9 @@ export const DesktopHeader = styled.div`
     
             > svg {
                 width: clamp(.3rem, 40vw, 3rem);
-            }
-        }
-    }
+            };
+        };
+    };
 
 `;
 

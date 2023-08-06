@@ -11,7 +11,7 @@ export const Container = styled.div`
     > main, form, .input-wrapper, .textArea-wrapper, .img-wrapper {
         display: flex;
         flex-direction: column;
-    }
+    };
 
     > main {
         gap: 2rem;
@@ -24,8 +24,8 @@ export const Container = styled.div`
             max-width: 80rem;
 
     
-        }
-    }
+        };
+    };
 
     form {
         gap: 2rem;
@@ -33,7 +33,7 @@ export const Container = styled.div`
 
         > button {
            padding: 1.5rem;
-        }
+        };
 
         @media(min-width: 650px) {
             width: 80rem;
@@ -55,37 +55,32 @@ export const Container = styled.div`
             Button {
                 grid-area: button;
                 
-            }
-        }
-
-
-    }
+            };
+        };
+    };
 
     .img-wrapper {
         span {
             margin-bottom: .6rem;
-        }
-    }
+        };
+    };
 
 
     .input-wrapper {
         width: 100%;
-
-    }
+    };
 
     .textArea-wrapper {
         @media(min-width: 650px) {
-        grid-area: description;
-
-            
-        }
-    }
+        grid-area: description; 
+        };
+    };
 
     .input-name, .input-price {
         display: flex;
         flex-direction: column;
         gap: .8rem;
-    }
+    };
 
     @media(min-width: 650px) {
 
@@ -95,18 +90,17 @@ export const Container = styled.div`
 
     .input-wrapper {
         flex-direction: row;
-    
-    }   
+    };
 
     .input-name {
         grid-area: name;
         width: 100%;
-    }
+    };
 
     .input-price {
         grid-area: price;
         width: 100%;
-    }
+    };
 
 }
 `;

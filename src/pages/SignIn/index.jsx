@@ -19,7 +19,7 @@ export function SignIn() {
 
     function handleSignIn(e) {
         signIn({email, password})
-    }
+    };
 
     return (
         <Container>

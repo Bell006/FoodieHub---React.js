@@ -13,4 +13,4 @@ export function Section({title, children}) {
             </main>
         </Container>
     );
-}
+};

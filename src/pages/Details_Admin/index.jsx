@@ -20,8 +20,8 @@ export function Details_Admin() {
     const navigate = useNavigate();
 
     function handleBack() {
-        navigate(-1)
-    }
+        navigate(-1);
+    };
 
     const params = useParams();
     const item_id = params.id;
@@ -46,11 +46,11 @@ export function Details_Admin() {
                 alert("Não foi possível buscar dados antigos do item.")
             }
         }
-    }
+    };
 
     function handleEdit(item_id) {
         return navigate(`/edit/${item_id}`);
-    }
+    };
 
 
     useEffect(() => {

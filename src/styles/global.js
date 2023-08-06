@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
     html {
         font-size: 62.5%;
-    }
+    };
 
     * {
         margin: 0;
@@ -14,27 +14,27 @@ export default createGlobalStyle`
             {
                 border: 4px solid ${({ theme }) => theme.COLORS.OFF_WHITE};
                 background-color: ${({ theme }) => theme.OFFWHITE};
-            }
+            };
 
             ::-webkit-scrollbar
             {
                 width: 5px;
                 background-color: ${({ theme }) => theme.OFF_WHITE};
-            }
+            };
 
             ::-webkit-scrollbar-thumb
             {
                 background-color: ${({ theme }) => theme.COLORS.BLUE_900};
                 border-radius: 6px;
-            }
-    }
+            };
+    };
 
     body {
         background-color: ${({ theme }) => theme.COLORS.OFF_WHITE};
         color: ${({ theme }) => theme.COLORS.BLUE_900};
 
         -webkit-font-smothing: antialiased;
-    }
+    };
 
     body, input, button, textarea, label, select {
         font-family: 'Roboto', sans-serif;
@@ -42,27 +42,27 @@ export default createGlobalStyle`
         outline: none;
 
         line-height: 2rem;
-    }
+    };
 
     a {
         text-decoration: none;
         display: flex;
         gap: .5rem;
-    }
+    };
 
     button, a {
         cursor: pointer;
         transition: filter 0.2s;
 
         font-weight: bold;
-    } 
+    };
 
     button:hover, a:hover {
         filter: brightness(0.98);
-    }
+    };
     
     li {
         list-style-type: none;
-    }
+    };
 
 `;

@@ -31,7 +31,7 @@ export const Content = styled.div`
 
         img {
             width: 100%;
-        }
+        };
 
         h1 {
             color: ${({ theme }) => theme.COLORS.GREY};  
@@ -41,8 +41,8 @@ export const Content = styled.div`
             margin: 0 auto;
 
             max-width: 20rem;
-        }
-    }
+        };
+    };
 
     @media (min-width: 650px) {
          padding-top: 9rem;
@@ -50,9 +50,9 @@ export const Content = styled.div`
          .noItems {
             h1 {
                 max-width: 60rem;
-            }
-    }
-    }  
+            };
+        };
+    };
 `;
 
 export const Outdoor = styled.div`
@@ -78,8 +78,8 @@ export const Outdoor = styled.div`
         > img {
             width: 14rem;
             height: 11rem;
-        }
-    }
+        };
+    };
 
     > aside {
         grid-area: text;
@@ -88,7 +88,7 @@ export const Outdoor = styled.div`
         color: ${({ theme }) => theme.COLORS.OFF_WHITE};
 
         margin: 0 .5rem;
-    }
+    };
 
     h1 {
         font-size: clamp(1.2rem, 3vw, 1.6rem);
@@ -96,13 +96,13 @@ export const Outdoor = styled.div`
 
         margin-bottom: .1rem;
         font-weight: 500;
-    }
+    };
 
     p {
         font-size: clamp(.8rem, 2vw, 1rem);
        
         line-height: 140%;
-    }
+    };
 
     @media (min-width: 525px) {
         height: 10rem;
@@ -116,24 +116,24 @@ export const Outdoor = styled.div`
             >img {
                 width: 18rem;
                 height: 13rem;
-            }
-        }
+            };
+        };
 
         > aside {
             top: 2.5rem;
-        }
+        };
 
         h1 {
             font-size: 2rem;
             width: 26rem;
-        }
+        };
     
         p {
             font-size: .9rem;
             width: 23rem;
             line-height: 1.2rem;
-        }
-    }
+        };
+    };
 
 
 
@@ -152,24 +152,24 @@ export const Outdoor = styled.div`
             >img {
                 width: 39.5rem;
                 height: 25.375rem;
-            }
-        }
+            };
+        };
     
         aside {
             top: 5rem;
-        }
+        };
     
         h1 {
             font-size: 2.5rem;
             width: 26rem;
 
             margin-bottom: .8rem;
-        }
+        };
     
         p {
             font-size: 1.4rem;
             width: 25rem;
             line-height: 1.8rem;
-        }
-    }
+        };
+    };
 `; 

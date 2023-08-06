@@ -37,8 +37,8 @@ export function Edit_Admin() {
     const navigate = useNavigate();
 
     function handleBack() {
-        navigate(-1)
-    }
+        navigate(-1);
+    };
 
     async function itemInfo(item_id) {
         try {
@@ -55,28 +55,28 @@ export function Edit_Admin() {
             } else {
                 alert("Não foi possível buscar dados antigos do item.")
             }
-        }
-    }
+        };
+    };
 
     function handleImgChange(event) {
         const file = event.target.files[0];
 
         setLabelText(file.name);
         setNewImg(file);
-    }
+    };
 
     function handleAddIngredient() {
         if(ingredients.includes(newIngredient)) {
             return alert("O ingrediente citado já está definido.");
-        }
+        };
 
         setIngredients(prevState => [...prevState, newIngredient])
         setNewIngredient("");
-    }
+    };
 
     function handleDeleteIngredient(deletedIngredient) {
         setIngredients(prevState => prevState.filter(ingredient => deletedIngredient !== ingredient))
-    }
+    };
 
     async function handleUpdate() {
         try {
@@ -96,8 +96,8 @@ export function Edit_Admin() {
             } else {
                 alert("Não foi possível atualizar o item.")
             }
-        }
-    }
+        };
+    };
 
 
     async function handleDelete() {
@@ -112,9 +112,9 @@ export function Edit_Admin() {
                 if(error.response) {
                     alert(error.response.data.message)
                 }
-            }
-        }
-    }
+            };
+        };
+    };
 
     useEffect(() => {
         itemInfo(item_id);

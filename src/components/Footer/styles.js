@@ -13,10 +13,10 @@ export const Container = styled.footer`
 
     img {
         width: 8rem;
-    }
+    };
 
     p {
         font-size: 1.1rem;
-    }
+    };
 `;
 

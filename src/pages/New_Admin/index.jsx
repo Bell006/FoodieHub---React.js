@@ -32,8 +32,8 @@ export function New_Admin() {
     const navigate = useNavigate();
 
     function handleBack() {
-        navigate(-1)
-    }
+        navigate(-1);
+    };
 
     function handleAddIngredient() {
         if(!newIngredient) {
@@ -43,17 +43,17 @@ export function New_Admin() {
         }
         setIngredients(prevState => [...prevState, newIngredient]);
         setNewIngredient('');
-    }
+    };
 
     function handleDeleteIngredient(deletedIngredient) {
         setIngredients(prevState => prevState.filter(ingredient => ingredient !== deletedIngredient));
-    }
+    };
 
     function handleImgChange(event) {
         const file = event.target.files[0];
         setLabelText(file ? file.name : null);
         setItemImg(file);
-    }
+    };
 
     async function handleAddItem() {
         try {
@@ -73,9 +73,9 @@ export function New_Admin() {
                 alert(error.response.data.message);
             } else {
                 alert("Não foi possível cadastrar o item.");
-            }
-        }
-    }
+            };
+        };
+    };
 
 
     return (

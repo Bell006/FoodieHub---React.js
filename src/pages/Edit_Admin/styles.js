@@ -12,7 +12,7 @@ export const Container = styled.div`
     > main, form, .input-wrapper, .textArea-wrapper, .img-wrapper {
         display: flex;
         flex-direction: column;
-    }
+    };
 
     > main {
         gap: 2rem;
@@ -25,8 +25,8 @@ export const Container = styled.div`
             max-width: 80rem;
 
     
-        }
-    }
+        };
+    };
 
     form {
         gap: 2rem;
@@ -49,30 +49,29 @@ export const Container = styled.div`
                 "category img"
                 "description description"
                 "ingredients ingredients"
-                "button button";
-        }
-
-
-    }
+                "button button"
+            ;
+        };
+    };
 
     .img-wrapper {
         span {
             margin-bottom: .6rem;
-        }
-    }
+        };
+    };
 
 
     .input-name, .input-price {
         display: flex;
         flex-direction: column;
         gap: .8rem;
-    }
+    };
 
     .textArea-wrapper {
         @media(min-width: 650px) {
             grid-area: description;
-        }
-    }
+        };
+    };
 
     .button-wrapper {
         grid-area: button;
@@ -81,7 +80,7 @@ export const Container = styled.div`
         display: flex;
         flex-direction: row;
         gap: 2rem;
-    }
+    };
 
 
 
@@ -93,18 +92,17 @@ export const Container = styled.div`
 
     .input-wrapper {
         flex-direction: row;
-    
-    }   
+    };
 
     .input-name {
         grid-area: name;
         width: 100%;
-    }
+    };
 
     .input-price {
         grid-area: price;
         width: 100%;
-    }
+    };
 
 }
 `;
@@ -130,22 +128,22 @@ export const FoodImg = styled.div`
         gap: 1rem;
         
         color: ${({ theme }) => theme.COLORS.OFF_WHITE};
-    }
+    };
 
     input {
         display: none;
-    }
+    };
 
     svg {
         width: 2.4rem;
         height: 2.4rem;
-    }
+    };
 
 
     @media(min-width: 650px) {
         grid-area: img;
         margin-top: 0;
-    }
+    };
 `;
 
 export const SelectWrapper = styled.div`
@@ -161,16 +159,13 @@ export const SelectWrapper = styled.div`
 
         background-color: ${({ theme }) => theme.COLORS.BLUE_900};
         color: ${({ theme }) => theme.COLORS.OFF_WHITE};
-
-    }
+    };
 
 
     @media(min-width: 650px) {
         grid-area: category;
         width: 100%;
-
-
-    }
+    };
 `;
 
 export const IngredientsWrapper = styled.div`
@@ -185,19 +180,14 @@ export const IngredientsWrapper = styled.div`
 
     @media(min-width: 650px) {
         justify-content: flex-start;
-    
-    }
+    };
 `;
 
 export const Ingredients = styled.div`
 
-
-@media(min-width: 650px) {
-    grid-area: ingredients;
-
-    
-        
-}
+    @media(min-width: 650px) {
+        grid-area: ingredients;    
+    };
 
 `;
 
@@ -216,6 +206,6 @@ export const TextArea = styled.textarea`
 
     &:placeholder {
         color: ${({ theme }) => theme.COLORS.GREY};
-    }
+    };
 `;
 
