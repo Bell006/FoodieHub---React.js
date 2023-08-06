@@ -21,10 +21,8 @@ export const Container = styled.div`
         grid-area: content;
 
 
-        @media(min-width: 650px) {
-            max-width: 80rem;
-
-    
+        @media(min-width: 800px) {
+            width: 80rem;
         };
     };
 
@@ -35,7 +33,6 @@ export const Container = styled.div`
 
 
         @media(min-width: 650px) {
-            width: 80rem;
             min-height: 50rem;
             margin-top: 5rem;
 
@@ -82,29 +79,37 @@ export const Container = styled.div`
         gap: 2rem;
     };
 
+    .logo {
+        width: 17rem;
+    };
+
 
 
     @media(min-width: 650px) {
 
-    justify-items: center;
-    height: 100vh;
+        justify-items: center;
+        height: 100vh;
 
 
-    .input-wrapper {
-        flex-direction: row;
-    };
+        .input-wrapper {
+            flex-direction: row;
+        };
 
-    .input-name {
-        grid-area: name;
-        width: 100%;
-    };
+        .input-name {
+            grid-area: name;
+            width: 100%;
+        };
 
-    .input-price {
-        grid-area: price;
-        width: 100%;
-    };
+        .input-price {
+            grid-area: price;
+            width: 100%;
+        };
 
-}
+        
+        .logo {
+            display: none;
+        };
+    }
 `;
 
 export const FoodImg = styled.div`

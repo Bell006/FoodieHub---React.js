@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    height: 100vh;
     width: 100%;
+    height: 100%;
 
     display: grid;
     grid-template-rows: 11rem auto 7.5rem;
     grid-template-areas: "header" "content" "footer";
+    position: relative;
 
     > main, form, .input-wrapper, .textArea-wrapper, .img-wrapper {
         display: flex;
@@ -20,10 +21,8 @@ export const Container = styled.div`
         grid-area: content;
 
 
-        @media(min-width: 650px) {
-            max-width: 80rem;
-
-    
+        @media(min-width: 800px) {
+            width: 80rem;
         };
     };
 
@@ -31,12 +30,9 @@ export const Container = styled.div`
         gap: 2rem;
         margin-top: 2rem;
 
-        > button {
-           padding: 1.5rem;
-        };
+
 
         @media(min-width: 650px) {
-            width: 80rem;
             min-height: 50rem;
             margin-top: 5rem;
 
@@ -50,14 +46,14 @@ export const Container = styled.div`
                 "category img"
                 "description description"
                 "ingredients ingredients"
-                "button button";
-
-            Button {
-                grid-area: button;
-                
-            };
+                "button button"
+            ;
         };
     };
+
+    button {
+        grid-area: button;
+    }
 
     .img-wrapper {
         span {
@@ -66,43 +62,49 @@ export const Container = styled.div`
     };
 
 
-    .input-wrapper {
-        width: 100%;
-    };
-
-    .textArea-wrapper {
-        @media(min-width: 650px) {
-        grid-area: description; 
-        };
-    };
-
     .input-name, .input-price {
         display: flex;
         flex-direction: column;
         gap: .8rem;
     };
 
+    .textArea-wrapper {
+        @media(min-width: 650px) {
+            grid-area: description;
+        };
+    };
+
+    .logo {
+        width: 17rem;
+    };
+
+
+
     @media(min-width: 650px) {
 
-    justify-items: center;
-    height: 100vh;
+        justify-items: center;
+        height: 100vh;
 
 
-    .input-wrapper {
-        flex-direction: row;
-    };
+        .input-wrapper {
+            flex-direction: row;
+        };
 
-    .input-name {
-        grid-area: name;
-        width: 100%;
-    };
+        .input-name {
+            grid-area: name;
+            width: 100%;
+        };
 
-    .input-price {
-        grid-area: price;
-        width: 100%;
-    };
+        .input-price {
+            grid-area: price;
+            width: 100%;
+        };
 
-}
+        
+        .logo {
+            display: none;
+        };
+    }
 `;
 
 export const FoodImg = styled.div`
@@ -126,22 +128,22 @@ export const FoodImg = styled.div`
         gap: 1rem;
         
         color: ${({ theme }) => theme.COLORS.OFF_WHITE};
-    }
+    };
 
     input {
         display: none;
-    }
+    };
 
     svg {
         width: 2.4rem;
         height: 2.4rem;
-    }
+    };
 
 
     @media(min-width: 650px) {
         grid-area: img;
         margin-top: 0;
-    }
+    };
 `;
 
 export const SelectWrapper = styled.div`
@@ -157,16 +159,13 @@ export const SelectWrapper = styled.div`
 
         background-color: ${({ theme }) => theme.COLORS.BLUE_900};
         color: ${({ theme }) => theme.COLORS.OFF_WHITE};
-
-    }
+    };
 
 
     @media(min-width: 650px) {
         grid-area: category;
         width: 100%;
-
-
-    }
+    };
 `;
 
 export const IngredientsWrapper = styled.div`
@@ -181,19 +180,14 @@ export const IngredientsWrapper = styled.div`
 
     @media(min-width: 650px) {
         justify-content: flex-start;
-    
-    }
+    };
 `;
 
 export const Ingredients = styled.div`
 
-
-@media(min-width: 650px) {
-    grid-area: ingredients;
-
-    
-        
-}
+    @media(min-width: 650px) {
+        grid-area: ingredients;    
+    };
 
 `;
 
@@ -212,6 +206,5 @@ export const TextArea = styled.textarea`
 
     &:placeholder {
         color: ${({ theme }) => theme.COLORS.GREY};
-    }
+    };
 `;
-

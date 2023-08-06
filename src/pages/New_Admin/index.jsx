@@ -1,6 +1,7 @@
 import { Container, TextArea, FoodImg, SelectWrapper, Ingredients, IngredientsWrapper } from './styles';
 
 import { AiOutlineArrowLeft, AiOutlineUpload } from "react-icons/ai";
+import logoAdmin from "../../assets/Logo_admin.svg";
 
 import { Input } from "../../components/Input";
 import { Button } from '../../components/Button';
@@ -80,7 +81,9 @@ export function New_Admin() {
 
     return (
         <Container>
-            <Header Admin/>
+            <Header Admin>
+                <img className='logo' src={logoAdmin} alt="Brand image"/>
+            </Header>
 
             <main>
                 <TextButton title="voltar" icon={AiOutlineArrowLeft} onClick={handleBack}/>

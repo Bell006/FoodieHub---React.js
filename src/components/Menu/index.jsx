@@ -63,7 +63,7 @@ export function Menu({ Admin, children,...rest}) {
 
                 </MenuBar>,
                 document.body
-            )};
+            )}
         </Container>
     );
 };

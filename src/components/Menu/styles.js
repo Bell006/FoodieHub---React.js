@@ -5,9 +5,7 @@ export const Container = styled.div`
         border: none;
         background: none;
 
-        width: clamp(2rem, 5vw, 4rem);
-
-
+        width: clamp(3rem, 5vw, 4rem);
     };
 `;
 

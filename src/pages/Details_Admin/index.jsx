@@ -3,6 +3,7 @@ import food from "../../assets/FoodTestHD.png";
 
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { GoPencil } from 'react-icons/go';
+import logoAdmin from "../../assets/Logo_admin.svg";
 
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
@@ -59,7 +60,9 @@ export function Details_Admin() {
 
     return (
         <Container>
-            <Header Admin/>
+            <Header Admin>
+                <img className='logo' src={logoAdmin} alt="Brand image"/>
+            </Header>
             <Content>
                 <TextButton title="voltar" icon={AiOutlineArrowLeft} onClick={handleBack}/>
 
