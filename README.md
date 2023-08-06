@@ -1,4 +1,4 @@
-﻿# FoodieHub - Desafio Final Explorer
+﻿# FoodieHub - Desafio Final Explorer (react.js)
 
 Repositório definido para o frontEnd do desafio final para o bootCamp Explorer, da RocketSeat. FoodieHub: Projeto de cardápio digital para um restaurante fictício.
 
