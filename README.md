@@ -1,6 +1,6 @@
 ﻿# FoodieHub - Desafio Final Explorer
 
-Repositório definido para o frontEnd do desafio final para o bootCamp Explorer, da RocketSeat.
+Repositório definido para o frontEnd do desafio final para o bootCamp Explorer, da RocketSeat. FoodieHub: Projeto de cardápio digital para um restaurante fictício.
 
 ### Desenvolvimento:
 
